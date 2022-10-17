@@ -2,7 +2,7 @@
 #define NODOS_HPP
 
 #include <iostream>
-#include "animales_b.hpp"
+#include "animales.hpp"
 
 class Nodo{
 private:
