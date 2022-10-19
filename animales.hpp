@@ -19,18 +19,18 @@ private:
     std::string nombre;
     int edad;
     std::string tamaño;
-    int hambre;
-    int higiene;
+    
 
 protected:
-    personalidad_t personalidad;
+    bool se_baña;
+    float hambre;
+    float higiene;
+    Personalidad* personalidad;
 
 public:
-    bool se_baña;
     Animal();
-    Animal(std::string n_nombre, int n_edad, std::string n_tamaño, std::string n_personalidad);
+    Animal(std::string n_nombre, int n_edad, std::string n_tamaño);
     void mostrar_nombre_edad();
-    virtual void ensuciar_aumentar_hambre();
     virtual void alimentar();
     void bañarse();
 };

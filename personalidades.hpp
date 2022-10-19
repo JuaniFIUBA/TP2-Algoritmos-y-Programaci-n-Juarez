@@ -4,10 +4,13 @@
 #include <iostream>
 #include <string>
 
-struct personalidad_t{
-    std::string nombre;
-    float crecimiento_hambre;
-    float crecimiento_suciedad;
+
+class Personalidad{
+
+public:
+    Personalidad();
+    virtual void pasar_tiempo();
+
 };
 
 #endif
