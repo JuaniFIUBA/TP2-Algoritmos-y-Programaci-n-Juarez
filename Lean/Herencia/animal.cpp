@@ -31,5 +31,4 @@ float Animal::obtener_higiene(){
 
 Animal::~Animal(){
     cout<<""<<nombre<<" fue borrado con exito"<<endl;
-    delete personalidad;
 }
