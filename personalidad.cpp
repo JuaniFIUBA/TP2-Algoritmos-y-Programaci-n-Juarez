@@ -1,4 +1,4 @@
-#include "personalidades.hpp"
+#include "personalidad.hpp"
 
 Personalidad::Personalidad(){
 }

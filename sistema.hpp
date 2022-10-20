@@ -1,17 +1,20 @@
 #ifndef SISTEMA_HPP
 #define SISTEMA_HPP
-#include "animales.hpp"
+#include "lista.hpp"
 #include <iostream>
 #include <string>
 
 class Sistema{
 private:
-    Animal* animal;
-    
+    Lista lista;
+
 public:
     Sistema();
     void leer_archivo();
-    void cargar_lista();
+
+private:
+    Animal* obtener_especie(std::string n_especie);
+    void definir_personalidad(std::string n_personalidad,std::string n_especie, int posicion);
 };
 
 

@@ -1,8 +1,8 @@
 #include <iostream>
 #include "nodos.hpp"
 
-Nodo::Nodo(){
-    animal = NULL;
+Nodo::Nodo(Animal* n_animal){
+    animal = n_animal;
     siguiente = NULL;
 }
 

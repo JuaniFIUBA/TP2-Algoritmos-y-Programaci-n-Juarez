@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "personalidades.hpp"
+#include "personalidad.hpp"
 
 
 class Travieso : public Personalidad{

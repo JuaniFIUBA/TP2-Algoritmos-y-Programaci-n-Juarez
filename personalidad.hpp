@@ -1,5 +1,5 @@
-#ifndef PERSONALIDADES_HPP
-#define PERSONALIDADES_HPP
+#ifndef PERSONALIDAD_HPP
+#define PERSONALIDAD_HPP
 
 #include <iostream>
 #include <string>

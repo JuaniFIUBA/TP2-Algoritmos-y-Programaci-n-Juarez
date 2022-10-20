@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "personalidades.hpp"
+#include "personalidad.hpp"
 
 const char PERRO = 'P';
 const char GATO = 'G';
@@ -25,9 +25,9 @@ protected:
     bool se_baña;
     float hambre;
     float higiene;
-    Personalidad* personalidad;
 
 public:
+    Personalidad* personalidad;
     Animal();
     Animal(std::string n_nombre, int n_edad, std::string n_tamaño);
     void mostrar_nombre_edad();

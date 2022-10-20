@@ -9,7 +9,7 @@ private:
     Animal* animal;
     Nodo* siguiente;
 public:
-    Nodo();
+    Nodo(Animal* n_animal);
     Nodo(Animal* n_animal, Nodo* n_siguiente);
     void cambiar_siguiente(Nodo* pn);
     Nodo* obtener_siguiente();
