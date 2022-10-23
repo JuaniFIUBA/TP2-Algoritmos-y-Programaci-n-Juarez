@@ -11,7 +11,6 @@ class Personalidad
         virtual string mostrar_personalidad() = 0;
         virtual float modificador_hambre() = 0;
         virtual float modificador_higiene() = 0;
-        virtual ~Personalidad(){}
 }; //Es un decoradaor de la clase animal
 
 #endif

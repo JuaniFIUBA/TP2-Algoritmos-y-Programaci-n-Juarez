@@ -12,7 +12,6 @@ class Dormilon : public Personalidad{
         string mostrar_personalidad();
         float modificador_hambre(); //Modifica pasar tiempo, en este caso, el hambre aumenta la mitad
         float modificador_higiene(); //Modifica pasar tiempo, en este caso es normal.
-        virtual ~Dormilon(){}
 };
 
 #endif

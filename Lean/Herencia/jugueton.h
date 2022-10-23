@@ -13,7 +13,6 @@ class Jugueton : public Personalidad{
         string mostrar_personalidad();
         float modificador_hambre(); //Modifica pasar tiempo, en este caso, aumenta el hambre x2
         float modificador_higiene(); //Modifica pasar tiempo, en este caso es normal.
-        virtual ~Jugueton(){};
 };
 
 #endif

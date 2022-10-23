@@ -28,7 +28,7 @@ class Animal
         virtual void alimentarse(){}
         virtual void lavarse(){}
 
-        virtual ~Animal();
+        virtual ~Animal(){};
 
 };
 

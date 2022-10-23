@@ -28,7 +28,3 @@ float Animal::obtener_hambre(){
 float Animal::obtener_higiene(){
     return higiene;
 }
-
-Animal::~Animal(){
-    cout<<""<<nombre<<" fue borrado con exito"<<endl;
-}
