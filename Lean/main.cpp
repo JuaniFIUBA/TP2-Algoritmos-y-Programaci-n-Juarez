@@ -1,4 +1,5 @@
-#include "lista.h"
+#include "listaLean.h"
+#include "nodoLean.h"
 #include "perro.h"
 #include "jugueton.h"
 #include "dormilon.h"
@@ -12,10 +13,10 @@ int main(){
     Personalidad *punteroPersonalidad = new Jugueton();
     Personalidad *punteroPersonalidadDos = new Dormilon();
 
-    // Animal *perro_puntero = new Perro("LeanPuntero", 5, "Perro", 10, punteroPersonalidad);
+    Animal *perro_puntero = new Perro("LeanPuntero", 5, "Perro", 10, punteroPersonalidad);
 
-    // Nodo *nodoCero = new Nodo();
-    // Nodo nodo(perro_puntero, nodoCero);
+    Nodo *nodoCero = new Nodo();
+    Nodo nodo(perro_puntero, nodoCero);
 
 //Probando NODOS
     //cout<<"Probando el nodo"<<endl;
@@ -26,13 +27,16 @@ int main(){
     cout<<"Probando listas"<<endl;
     Animal *perro_puntero_dos = new Perro("Dog", 5, "Perro", 10, punteroPersonalidad);
     Animal *gato_puntero = new Gato("Gato", 5, "Gato", 10, punteroPersonalidadDos);
-    Lista<Animal*> lista;
+    Lista *lista = new Lista();
 
-    lista.agregar(perro_puntero_dos, 0);
-    lista.agregar(gato_puntero, 1);
+    lista->agregar(perro_puntero_dos);
+    lista->agregar(gato_puntero);
 
-    delete perro_puntero_dos;
-    delete gato_puntero;
+    lista->obtenerNodo();
     
+    perro_puntero->~Animal();
+    perro_puntero_dos->~Animal();
+    gato_puntero->~Animal();
+
     return 0;
 }

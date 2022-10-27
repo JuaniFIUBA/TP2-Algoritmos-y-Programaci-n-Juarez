@@ -1,9 +1,10 @@
 #include "animal.h"
 
-Animal::Animal(string nombre , int edad, Personalidad *personalidad)
+Animal::Animal(string nombre , int edad, string especie, Personalidad *personalidad)
 {
     this->nombre = nombre;
     this->edad = edad;
+    this->especie = especie;
     this->personalidad = personalidad;
     this->hambre = 0;
     this->higiene = 100;
@@ -18,6 +19,10 @@ int Animal::obtener_edad(){
     return edad;
 }
 
+string Animal::obtener_especie(){
+    return especie;
+}
+
 string Animal::mostrar_personalidad(){
     return personalidad->mostrar_personalidad();
 }
@@ -27,4 +32,8 @@ float Animal::obtener_hambre(){
 }
 float Animal::obtener_higiene(){
     return higiene;
+}
+
+Animal::~Animal(){
+    cout<<""<<nombre<<" fue borrado con exito"<<endl;
 }
