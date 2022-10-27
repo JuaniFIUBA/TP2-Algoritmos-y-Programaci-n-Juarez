@@ -11,9 +11,8 @@ private:
     std::string nombre;
 
 public:
-    
-    virtual void pasar_tiempo();
-
+    Travieso(std::string nombre);
+    ~Travieso();
 };
 
 #endif

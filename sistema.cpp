@@ -2,12 +2,17 @@
 #include <fstream>
 #include "sistema.hpp"
 #include "animales.hpp"
+#include "perro.hpp"
+#include "gato.hpp"
+#include "caballo.hpp"
+#include "roedor.hpp"
+#include "conejo.hpp"
 #include "erizo.hpp"
+#include "lagartija.hpp"
+#include "dormilon.hpp"
+#include "jugueton.hpp"
+#include "sociable.hpp"
 #include "travieso.hpp"
-
-Sistema::Sistema(){
-
-}
 
 void Sistema::leer_archivo(){
     std::fstream lista_animales("animales.csv");
@@ -21,24 +26,65 @@ void Sistema::leer_archivo(){
         getline(lista_animales, tamaño,',');
         getline(lista_animales, especie,',');
         getline(lista_animales, personalidad,'\n');
-        definir_personalidad(personalidad,especie,i);
+        definir_personalidad(personalidad,i,nombre,stoi(edad),tamaño,especie);
         i++;
     }
     lista_animales.close();
 }
 
-Animal* Sistema::obtener_especie(std::string n_especie){
-    if(n_especie == "erizo"){
-        Animal* n_animal = new Erizo();
+Animal* Sistema::obtener_especie(std::string n_nombre, int n_edad, std::string n_tamaño, std::string n_especie){
+    if(n_especie == "perro"){
+        Animal* n_animal = new Perro(n_nombre,n_edad,n_tamaño,n_especie);
         return n_animal;
+    }
+    if(n_especie == "gato"){
+        Animal* n_animal = new Gato(n_nombre,n_edad,n_tamaño,n_especie);
+        return n_animal;
+    }
+    if(n_especie == "caballo"){
+        Animal* n_animal = new Caballo(n_nombre,n_edad,n_tamaño,n_especie);
+        return n_animal;
+    }
+    if(n_especie == "roedor"){
+        Animal* n_animal = new Roedor(n_nombre,n_edad,n_tamaño,n_especie);
+        return n_animal;
+    }
+    if(n_especie == "conejo"){
+        Animal* n_animal = new Conejo(n_nombre,n_edad,n_tamaño,n_especie);
+        return n_animal;
+    }
+    if(n_especie == "Erizo"){
+        Animal* n_animal = new Erizo(n_nombre,n_edad,n_tamaño,n_especie);
+        return n_animal;
+    }else{
+        Animal* n_animal = new Lagartija(n_nombre,n_edad,n_tamaño,n_especie);
+        return n_animal;    
     }
 }
 
-void Sistema::definir_personalidad(std::string n_personalidad,std::string n_especie, int posicion){
-    if(n_personalidad == "travieso"){
-        Personalidad* n_personalidad = new Travieso();
-        Animal* animal = obtener_especie(n_especie);
-        animal->personalidad = n_personalidad;
+void Sistema::definir_personalidad(std::string n_personalidad,int posicion, std::string n_nombre, int n_edad, std::string n_tamaño, std::string n_especie){
+    if(n_personalidad == "dormilon"){
+        Personalidad* personalidad = new Dormilon(n_personalidad);
+        Animal* animal = obtener_especie(n_nombre,n_edad,n_tamaño,n_especie);
+        animal->personalidad = personalidad;
+        this->lista.alta(animal,posicion);
+    }
+    if(n_personalidad == "jugueton"){
+        Personalidad* personalidad = new Jugueton(n_personalidad);
+        Animal* animal = obtener_especie(n_nombre,n_edad,n_tamaño,n_especie);
+        animal->personalidad = personalidad;
+        this->lista.alta(animal,posicion);
+    }
+    if(n_personalidad == "sociable"){
+        Personalidad* personalidad = new Sociable(n_personalidad);
+        Animal* animal = obtener_especie(n_nombre,n_edad,n_tamaño,n_especie);
+        animal->personalidad = personalidad;
+        this->lista.alta(animal,posicion);
+    }
+    else{
+        Personalidad* personalidad = new Travieso(n_personalidad);
+        Animal* animal = obtener_especie(n_nombre,n_edad,n_tamaño,n_especie);
+        animal->personalidad = personalidad;
         this->lista.alta(animal,posicion);
     }
 }

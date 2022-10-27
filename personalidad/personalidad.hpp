@@ -6,11 +6,11 @@
 
 
 class Personalidad{
-
 public:
+    float multiplicador_higiene;
+    float multiplicador_hambre;
     Personalidad();
-    virtual void pasar_tiempo();
-
+    virtual ~Personalidad();
 };
 
 #endif

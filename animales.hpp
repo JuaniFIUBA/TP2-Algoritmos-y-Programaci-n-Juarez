@@ -25,14 +25,16 @@ protected:
     bool se_baña;
     float hambre;
     float higiene;
-
+    
 public:
-    Personalidad* personalidad;
     Animal();
     Animal(std::string n_nombre, int n_edad, std::string n_tamaño);
+    Personalidad* personalidad;
     void mostrar_nombre_edad();
     virtual void alimentar();
+    virtual void pasar_tiempo();
     void bañarse();
+    virtual ~Animal();
 };
 
 #endif
