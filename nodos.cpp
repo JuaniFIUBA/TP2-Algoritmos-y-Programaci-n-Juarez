@@ -22,3 +22,5 @@ Nodo* Nodo::obtener_siguiente(){
 Animal* Nodo::obtener_animal(){
     return animal;
 }
+
+Nodo::~Nodo(){}

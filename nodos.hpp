@@ -14,6 +14,7 @@ public:
     void cambiar_siguiente(Nodo* pn);
     Nodo* obtener_siguiente();
     Animal* obtener_animal();
+    ~Nodo();
 };
 
 #endif

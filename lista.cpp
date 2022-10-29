@@ -24,3 +24,5 @@ Nodo* Lista::buscar_nodo(int pos){
     }  
     return auxiliar;
 }
+
+Lista::~Lista(){}

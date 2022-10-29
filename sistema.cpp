@@ -77,5 +77,7 @@ void Sistema::definir_personalidad(std::string n_personalidad,int posicion, std:
     }
 }
 
+Sistema::~Sistema(){}
+
 
 
