@@ -1,18 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include "sistema.hpp"
-#include "animales.hpp"
-#include "perro.hpp"
-#include "gato.hpp"
-#include "caballo.hpp"
-#include "roedor.hpp"
-#include "conejo.hpp"
-#include "erizo.hpp"
-#include "lagartija.hpp"
-#include "dormilon.hpp"
-#include "jugueton.hpp"
-#include "sociable.hpp"
-#include "travieso.hpp"
 
 void Sistema::leer_archivo(){
     std::fstream lista_animales("animales.csv");

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "personalidades.hpp"
+#include "personalidad.hpp"
 #include "animales.hpp"
 
 int main(){

@@ -12,6 +12,7 @@ private:
 
 public:
     Dormilon(std::string nombre);
+    void modificar_bases(float* base_higiene, float* base_hambre);
     ~Dormilon();
 };
 

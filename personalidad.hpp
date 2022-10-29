@@ -10,7 +10,8 @@ public:
     float multiplicador_higiene;
     float multiplicador_hambre;
     Personalidad();
-    virtual ~Personalidad();
+    virtual void modificar_bases(float* base_higiene, float* base_hambre){};
+    virtual ~Personalidad(){};
 };
 
 #endif

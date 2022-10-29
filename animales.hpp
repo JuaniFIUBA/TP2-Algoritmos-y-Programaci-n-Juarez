@@ -20,11 +20,12 @@ private:
     int edad;
     std::string tamaño;
     
-
 protected:
     bool se_baña;
     float hambre;
     float higiene;
+    float base_hambre;
+    float base_higiene;
     
 public:
     Animal();
@@ -32,9 +33,9 @@ public:
     Personalidad* personalidad;
     void mostrar_nombre_edad();
     virtual void alimentar();
-    virtual void pasar_tiempo();
+    virtual void pasar_tiempo(){};
     void bañarse();
-    virtual ~Animal();
+    virtual ~Animal(){};
 };
 
 #endif
