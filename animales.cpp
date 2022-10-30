@@ -2,7 +2,7 @@
 
 Animal::Animal(){}    
 
-Animal::Animal(std::string n_nombre, int n_edad, std::string n_tamaño){
+Animal::Animal(std::string n_nombre, int n_edad, std::string n_tamaño){ 
     nombre = n_nombre;
     edad = n_edad;
     tamaño = n_tamaño;
@@ -10,10 +10,7 @@ Animal::Animal(std::string n_nombre, int n_edad, std::string n_tamaño){
     higiene = 100;
     base_hambre = 10;
     base_higiene = 10;
-}
 
-void Animal::mostrar_nombre_edad(){
-    std::cout<< nombre << edad <<std::endl;
 }
 
 void Animal::alimentar(){

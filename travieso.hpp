@@ -13,6 +13,7 @@ private:
 public:
     Travieso(std::string nombre);
     void modificar_bases(float* base_higiene, float* base_hambre);
+    std::string mostrar_nombre();
     ~Travieso();
 };
 

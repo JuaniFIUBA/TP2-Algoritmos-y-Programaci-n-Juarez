@@ -9,4 +9,8 @@ void Dormilon::modificar_bases(float* base_higiene, float* base_hambre){
     (*base_hambre) = (*base_hambre) * this->multiplicador_hambre;
 }
 
+std::string Dormilon::mostrar_nombre(){
+    return nombre;
+}
+
 Dormilon::~Dormilon(){}

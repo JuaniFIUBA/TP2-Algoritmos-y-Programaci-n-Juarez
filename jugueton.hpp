@@ -7,12 +7,12 @@
 
 
 class Jugueton : public Personalidad{
-private:
-    std::string nombre;
 
 public:
+    std::string nombre;
     Jugueton(std::string nombre);
     void modificar_bases(float* base_higiene, float* base_hambre);
+    std::string mostrar_nombre();
     ~Jugueton();
 };
 

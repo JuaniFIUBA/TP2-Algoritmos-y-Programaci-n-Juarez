@@ -7,9 +7,10 @@ private:
     std::string especie;
     
 public:
-    Lagartija(std::string n_nombre, int n_edad, std::string n_tamaño, std::string n_especie);
+    Lagartija(std::string n_nombre, int n_edad, std::string n_tamaño);
     void pasar_tiempo();
     void alimentar();
+    void mostrar_info();
     ~Lagartija();
 };
 

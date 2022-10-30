@@ -2,13 +2,15 @@
 #include <fstream>
 #include "sistema.hpp"
 
+Sistema::Sistema(){}
+
 void Sistema::leer_archivo(){
     std::fstream lista_animales("animales.csv");
     if(!lista_animales.is_open()){
         std::cout<< "Error, no se encuentra el archivo"<<std::endl;
     }
     std::string nombre,edad,tamaño,especie,personalidad;
-    int i = 1;
+    int i = 0;
     while(getline(lista_animales, nombre,',')){
         getline(lista_animales, edad,',');
         getline(lista_animales, tamaño,',');
@@ -20,32 +22,40 @@ void Sistema::leer_archivo(){
     lista_animales.close();
 }
 
+void Sistema::imprimir_lista(){
+    int i = 0;
+    while(lista.buscar_nodo(i)->obtener_siguiente()){
+        lista.buscar_nodo(i)->obtener_animal()->mostrar_info();
+        i++;
+    }
+}
+
 Animal* Sistema::obtener_especie(std::string n_nombre, int n_edad, std::string n_tamaño, std::string n_especie){
     if(n_especie == "perro"){
-        Animal* n_animal = new Perro(n_nombre,n_edad,n_tamaño,n_especie);
+        Animal* n_animal = new Perro(n_nombre,n_edad,n_tamaño);
         return n_animal;
     }
     if(n_especie == "gato"){
-        Animal* n_animal = new Gato(n_nombre,n_edad,n_tamaño,n_especie);
+        Animal* n_animal = new Gato(n_nombre,n_edad,n_tamaño);
         return n_animal;
     }
     if(n_especie == "caballo"){
-        Animal* n_animal = new Caballo(n_nombre,n_edad,n_tamaño,n_especie);
+        Animal* n_animal = new Caballo(n_nombre,n_edad,n_tamaño);
         return n_animal;
     }
     if(n_especie == "roedor"){
-        Animal* n_animal = new Roedor(n_nombre,n_edad,n_tamaño,n_especie);
+        Animal* n_animal = new Roedor(n_nombre,n_edad,n_tamaño);
         return n_animal;
     }
     if(n_especie == "conejo"){
-        Animal* n_animal = new Conejo(n_nombre,n_edad,n_tamaño,n_especie);
+        Animal* n_animal = new Conejo(n_nombre,n_edad,n_tamaño);
         return n_animal;
     }
     if(n_especie == "Erizo"){
-        Animal* n_animal = new Erizo(n_nombre,n_edad,n_tamaño,n_especie);
+        Animal* n_animal = new Erizo(n_nombre,n_edad,n_tamaño);
         return n_animal;
     }else{
-        Animal* n_animal = new Lagartija(n_nombre,n_edad,n_tamaño,n_especie);
+        Animal* n_animal = new Lagartija(n_nombre,n_edad,n_tamaño);
         return n_animal;    
     }
 }

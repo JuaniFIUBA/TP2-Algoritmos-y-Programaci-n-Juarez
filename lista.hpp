@@ -26,12 +26,13 @@ class Lista {
         //pos: devuelve el dato almacenado en pos, con pos < cantidad_elementos
         Animal* consulta(int pos);
 
+        Nodo* buscar_nodo(int posicion);
+
         //destructor
         ~Lista();
     private:
-        Nodo* buscar_nodo(int posicion);
-
         bool es_vacia();
+        
 };
 
 

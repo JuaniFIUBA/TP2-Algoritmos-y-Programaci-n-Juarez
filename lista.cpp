@@ -8,7 +8,7 @@ Lista::Lista() {
 void Lista::alta(Animal* animal, int posicion){
     Nodo* nuevo = new Nodo(animal);
     Nodo* siguiente = primero;
-    if(posicion == 1){
+    if(posicion == 0){
         primero = nuevo;
     }else{
         Nodo* anterior = buscar_nodo(posicion -1);
@@ -19,7 +19,7 @@ void Lista::alta(Animal* animal, int posicion){
 
 Nodo* Lista::buscar_nodo(int pos){
     Nodo* auxiliar = primero;
-    for(int i = 1; i < pos; i++){
+    for(int i = 0; i < pos; i++){
         auxiliar = auxiliar->obtener_siguiente();
     }  
     return auxiliar;

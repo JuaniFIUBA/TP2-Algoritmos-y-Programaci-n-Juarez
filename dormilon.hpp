@@ -7,12 +7,12 @@
 
 
 class Dormilon : public Personalidad{
-private:
-    std::string nombre;
 
 public:
+    std::string nombre;
     Dormilon(std::string nombre);
     void modificar_bases(float* base_higiene, float* base_hambre);
+    std::string mostrar_nombre();
     ~Dormilon();
 };
 

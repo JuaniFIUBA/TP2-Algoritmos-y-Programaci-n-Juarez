@@ -7,9 +7,10 @@ private:
     std::string especie;
     
 public:
-    Roedor(std::string n_nombre, int n_edad, std::string n_tamaño, std::string n_especie);
+    Roedor(std::string n_nombre, int n_edad, std::string n_tamaño);
     void pasar_tiempo();
     void alimentar();
+    void mostrar_info();
     ~Roedor();
 };
 

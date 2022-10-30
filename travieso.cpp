@@ -9,4 +9,8 @@ void Travieso::modificar_bases(float* base_higiene, float* base_hambre){
     (*base_higiene) = (*base_higiene) * this->multiplicador_higiene;
 }
 
+std::string Travieso::mostrar_nombre(){
+    return nombre;
+}
+
 Travieso::~Travieso(){}

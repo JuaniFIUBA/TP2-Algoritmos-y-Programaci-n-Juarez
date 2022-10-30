@@ -15,12 +15,11 @@ const char ERIZO = 'E';
 const char LAGARTIJA = 'L'; 
 
 class Animal{
-private:
+
+protected:
     std::string nombre;
     int edad;
     std::string tamaño;
-    
-protected:
     bool se_baña;
     float hambre;
     float higiene;
@@ -31,7 +30,7 @@ public:
     Animal();
     Animal(std::string n_nombre, int n_edad, std::string n_tamaño);
     Personalidad* personalidad;
-    void mostrar_nombre_edad();
+    virtual void mostrar_info(){};
     virtual void alimentar();
     virtual void pasar_tiempo(){};
     void bañarse();

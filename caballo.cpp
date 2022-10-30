@@ -1,12 +1,16 @@
 #include "caballo.hpp"
 
-Caballo::Caballo(std::string n_nombre, int n_edad, std::string n_tamaño, std::string n_especie) : Animal(){
+Caballo::Caballo(std::string n_nombre, int n_edad, std::string n_tamaño) : Animal(n_nombre, n_edad, n_tamaño){
     se_baña = true;
-    especie = n_especie;
+    especie = "caballo";
 }
 
 void Caballo::alimentar(){
     std::cout<<"Alimentaste al"<< especie <<"con manzanas"<<std::endl;
+}
+
+void Caballo::mostrar_info(){
+    std::cout<< nombre << " - " << edad << " - " <<tamaño << " - " << especie << " - " << personalidad->mostrar_nombre() << " - hambre:" << hambre << " - higiene:" << higiene <<std::endl;
 }
 
 void Caballo::pasar_tiempo(){
