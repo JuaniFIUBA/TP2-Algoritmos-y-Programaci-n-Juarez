@@ -6,14 +6,6 @@
 #include <fstream>
 #include "personalidad.hpp"
 
-const char PERRO = 'P';
-const char GATO = 'G';
-const char CABALLO = 'C';
-const char ROEDOR = 'R';
-const char CONEJO = 'O';
-const char ERIZO = 'E';
-const char LAGARTIJA = 'L'; 
-
 class Animal{
 
 protected:

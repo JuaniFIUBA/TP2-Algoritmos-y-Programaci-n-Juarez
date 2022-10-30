@@ -2,6 +2,14 @@
 #include <fstream>
 #include "sistema.hpp"
 
+const char PERRO = 'P';
+const char GATO = 'G';
+const char CABALLO = 'C';
+const char ROEDOR = 'R';
+const char CONEJO = 'O';
+const char ERIZO = 'E';
+
+
 Sistema::Sistema(){}
 
 void Sistema::leer_archivo(){
@@ -16,7 +24,7 @@ void Sistema::leer_archivo(){
         getline(lista_animales, tamaño,',');
         getline(lista_animales, especie,',');
         getline(lista_animales, personalidad,'\n');
-        definir_personalidad(personalidad,i,nombre,stoi(edad),tamaño,especie);
+        definir_personalidad(personalidad,i,nombre,stoi(edad),tamaño,especie[0]);
         i++;
     }
     lista_animales.close();
@@ -30,28 +38,28 @@ void Sistema::imprimir_lista(){
     }
 }
 
-Animal* Sistema::obtener_especie(std::string n_nombre, int n_edad, std::string n_tamaño, std::string n_especie){
-    if(n_especie == "perro"){
+Animal* Sistema::obtener_especie(std::string n_nombre, int n_edad, std::string n_tamaño, char n_especie){
+    if(n_especie == PERRO){
         Animal* n_animal = new Perro(n_nombre,n_edad,n_tamaño);
         return n_animal;
     }
-    if(n_especie == "gato"){
+    if(n_especie == GATO){
         Animal* n_animal = new Gato(n_nombre,n_edad,n_tamaño);
         return n_animal;
     }
-    if(n_especie == "caballo"){
+    if(n_especie == CABALLO){
         Animal* n_animal = new Caballo(n_nombre,n_edad,n_tamaño);
         return n_animal;
     }
-    if(n_especie == "roedor"){
+    if(n_especie == ROEDOR){
         Animal* n_animal = new Roedor(n_nombre,n_edad,n_tamaño);
         return n_animal;
     }
-    if(n_especie == "conejo"){
+    if(n_especie == CONEJO){
         Animal* n_animal = new Conejo(n_nombre,n_edad,n_tamaño);
         return n_animal;
     }
-    if(n_especie == "Erizo"){
+    if(n_especie == ERIZO){
         Animal* n_animal = new Erizo(n_nombre,n_edad,n_tamaño);
         return n_animal;
     }else{
@@ -60,7 +68,7 @@ Animal* Sistema::obtener_especie(std::string n_nombre, int n_edad, std::string n
     }
 }
 
-void Sistema::definir_personalidad(std::string n_personalidad,int posicion, std::string n_nombre, int n_edad, std::string n_tamaño, std::string n_especie){
+void Sistema::definir_personalidad(std::string n_personalidad,int posicion, std::string n_nombre, int n_edad, std::string n_tamaño, char n_especie){
     if(n_personalidad == "dormilon"){
         Personalidad* personalidad = new Dormilon(n_personalidad);
         Animal* animal = obtener_especie(n_nombre,n_edad,n_tamaño,n_especie);
