@@ -14,7 +14,11 @@ class Lista
         //constructor
         Lista();
 
+<<<<<<< Updated upstream
 
+=======
+        int mostrar_cantidad();
+>>>>>>> Stashed changes
         //pre:
         //pos: agrega un nodo en la posicion <<pos>> con pos >= 0
         void agregar(T dato, int pos);
@@ -44,6 +48,15 @@ Lista<T>::Lista()
     cantidad_elementos = 0;
 } 
 
+<<<<<<< Updated upstream
+=======
+template<class T>
+int Lista<T>::mostrar_cantidad()
+{
+    return cantidad_elementos;
+}
+
+>>>>>>> Stashed changes
 template <class T>
 void Lista<T>::agregar(T dato, int pos)
 {
@@ -83,8 +96,18 @@ void Lista<T>::borrar(int pos)
 template <class T>
 T Lista<T>::consulta(int pos)
 {
+<<<<<<< Updated upstream
 
     return buscar_nodo(pos) -> obtener_dato();
+=======
+    Nodo<T>* aux = buscar_nodo(pos);
+
+    if(pos == cantidad_elementos)
+        return 0;
+    else
+        return aux -> obtener_dato();    
+    
+>>>>>>> Stashed changes
 }
 
 template <class T>
@@ -104,7 +127,10 @@ template <class T>
 Nodo<T>* Lista<T>::buscar_nodo(int posicion)
 {
     Nodo<T>* actual = primero;
+<<<<<<< Updated upstream
     
+=======
+>>>>>>> Stashed changes
     for(int i = 0; i < cantidad_elementos; i++)
     {
         if(i == posicion)
