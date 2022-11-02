@@ -1,16 +1,12 @@
-#include "jugueton.hpp"
+#include "jugueton.h"
 
-Jugueton::Jugueton(std::string nombre) : Personalidad(){
-    this->nombre = nombre;
-    this->multiplicador_hambre = 2;
+Jugueton::Jugueton(){
 }
 
-void Jugueton::modificar_bases(float* base_higiene, float* base_hambre){
-    (*base_hambre) = (*base_hambre) * this->multiplicador_hambre;
+string Jugueton::mostrar_personalidad(){
+    return personalidad;
 }
 
-std::string Jugueton::mostrar_nombre(){
-    return nombre;
+void Jugueton::modificar_bases(float &crecimiento_hambre,float &decrecimiento_higiene){
+    crecimiento_hambre = crecimiento_hambre * this->estadistica_hambre;
 }
-
-Jugueton::~Jugueton(){}

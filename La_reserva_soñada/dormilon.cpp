@@ -1,16 +1,12 @@
-#include "dormilon.hpp"
+#include "dormilon.h"
 
-Dormilon::Dormilon(std::string nombre) : Personalidad(){
-    this->nombre = nombre;
-    this->multiplicador_hambre = 0.5;
+Dormilon::Dormilon(){
 }
 
-void Dormilon::modificar_bases(float* base_higiene, float* base_hambre){
-    (*base_hambre) = (*base_hambre) * this->multiplicador_hambre;
+string Dormilon::mostrar_personalidad(){
+    return personalidad;
 }
 
-std::string Dormilon::mostrar_nombre(){
-    return nombre;
+void Dormilon::modificar_bases(float &crecimiento_hambre, float &decrecimiento_higiene){
+    crecimiento_hambre = crecimiento_hambre * this->estadistica_hambre;
 }
-
-Dormilon::~Dormilon(){}

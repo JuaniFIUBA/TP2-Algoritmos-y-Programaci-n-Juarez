@@ -1,22 +1,24 @@
-#include "perro.hpp"
+#include "perro.h"
 
-Perro::Perro(std::string n_nombre, int n_edad, std::string n_tamanio) : Animal(n_nombre, n_edad, n_tamanio){
-    se_bania = true;
-    especie = "perro";
+Perro::Perro(string nombre, int edad, string especie, int tamanio, Personalidad *personalidad) : Animal(nombre, edad, especie, personalidad){
+    this->tamanio = tamanio;
+    this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene);
 }
 
-void Perro::alimentar(){
-    std::cout<<"Alimentaste al"<< especie <<"con huesos"<<std::endl;
+void Perro::lavarse(){
+    cout<<""<<Animal::obtener_nombre()<<", se ha bañado"<<endl;
+    higiene = 100;
+}
+
+void Perro::alimentarse(){
+    cout<<"Alimentaste al "<<especie<<", "<<Animal::obtener_nombre()<<" con huesos "<<endl;
+    hambre = 0;
+
 }
 
 void Perro::pasar_tiempo(){
-    personalidad->modificar_bases(&base_higiene,&base_hambre);
-    hambre = hambre - base_hambre;
-    higiene = higiene - base_higiene;
-}
-
-void Perro::mostrar_info(){
-    std::cout<< nombre << " - " << edad << " - " <<tamanio << " - " << especie << " - " << personalidad->mostrar_nombre() << " - hambre:" << hambre << " - higiene:" << higiene <<std::endl;
+    this->hambre = hambre + crecimiento_hambre;
+    this->higiene = higiene - decrecimiento_higiene;
 }
 
 Perro::~Perro(){

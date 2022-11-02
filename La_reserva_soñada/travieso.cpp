@@ -1,16 +1,12 @@
-#include "travieso.hpp"
+#include "travieso.h"
 
-Travieso::Travieso(std::string nombre) : Personalidad(){
-    this->nombre = nombre;
-    this->multiplicador_higiene = 2;
+Travieso::Travieso(){
 }
 
-void Travieso::modificar_bases(float* base_higiene, float* base_hambre){
-    (*base_higiene) = (*base_higiene) * this->multiplicador_higiene;
+string Travieso::mostrar_personalidad(){
+    return personalidad;
 }
 
-std::string Travieso::mostrar_nombre(){
-    return nombre;
+void Travieso::modificar_bases(float &crecimiento_hambre, float &decrecimiento_higiene){
+    decrecimiento_higiene = (decrecimiento_higiene) * this->estadistica_higiene;
 }
-
-Travieso::~Travieso(){}

@@ -1,23 +1,25 @@
-#include "erizo.hpp"
+#include "erizo.h"
 
-Erizo::Erizo(std::string n_nombre, int n_edad, std::string n_tamanio) : Animal(n_nombre, n_edad, n_tamanio){
-    se_bania = false;
-    especie = "erizo";
+Erizo::Erizo(string nombre, int edad, string especie, int tamanio, Personalidad *personalidad) : Animal(nombre, edad, especie, personalidad){
+    this->tamanio = tamanio;
+    this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene);
 }
 
-void Erizo::alimentar(){
-    std::cout<<"Alimentaste al"<< especie <<"con insectos"<<std::endl;
+void Erizo::lavarse(){
+    cout<<""<<Animal::obtener_nombre()<<", se ha bañado"<<endl;
+    higiene = 100;
+}
+
+void Erizo::alimentarse(){
+    cout<<"Alimentaste al "<<especie<<", "<<Animal::obtener_nombre()<<" con insectos"<<endl;
+    hambre = 0;
+
 }
 
 void Erizo::pasar_tiempo(){
-    personalidad->modificar_bases(&base_higiene,&base_hambre);
-    hambre = hambre - base_hambre;
+    this->hambre = hambre + crecimiento_hambre;
+    this->higiene = higiene - decrecimiento_higiene;
 }
-
-void Erizo::mostrar_info(){
-    std::cout<< nombre << " - " << edad << " - " <<tamanio << " - " << especie << " - " << personalidad->mostrar_nombre() << " - hambre:" << hambre << " - higiene:" << higiene <<std::endl;
-}
-
 
 Erizo::~Erizo(){
     delete personalidad;

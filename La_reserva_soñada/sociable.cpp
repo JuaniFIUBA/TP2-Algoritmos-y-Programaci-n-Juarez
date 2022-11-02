@@ -1,16 +1,12 @@
-#include "sociable.hpp"
+#include "sociable.h"
 
-Sociable::Sociable(std::string nombre) : Personalidad(){
-    this->nombre = nombre;
-    this->multiplicador_higiene = 0.5;
+Sociable::Sociable(){
 }
 
-void Sociable::modificar_bases(float* base_higiene, float* base_hambre){
-    (*base_higiene) = (*base_higiene) * this->multiplicador_higiene;
+string Sociable::mostrar_personalidad(){
+    return personalidad;
 }
 
-std::string Sociable::mostrar_nombre(){
-    return nombre;
+void Sociable::modificar_bases(float &crecimiento_hambre, float &decrecimiento_higiene){
+    decrecimiento_higiene = (decrecimiento_higiene) * this->estadistica_higiene;
 }
-
-Sociable::~Sociable(){}
