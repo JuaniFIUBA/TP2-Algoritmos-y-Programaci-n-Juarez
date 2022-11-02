@@ -34,7 +34,10 @@ void Sistema::leer_archivo(){
 
 void Sistema::mostrar_info_animal(int pos)
 {
-    lista.consulta(pos)->mostrar_info();
+    lista.consulta(pos)->obtener_nombre();
+    lista.consulta(pos)->obtener_edad();
+    lista.consulta(pos)->obtener_tamanio();
+    lista.consulta(pos)->obtener_nombre();
 }
 void Sistema::imprimir_lista(){
     int largo = lista.mostrar_cantidad() - 1; //el - 1 es porque lista siemrpe tiene 1 elemento menos que su cantidad
