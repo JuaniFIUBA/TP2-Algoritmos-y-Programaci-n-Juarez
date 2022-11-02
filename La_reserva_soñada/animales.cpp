@@ -1,9 +1,10 @@
 #include "animales.h"
 
-Animal::Animal(string nombre , int edad, string especie, Personalidad *personalidad)
+Animal::Animal(string nombre , int edad, int tamanio, string especie, Personalidad *personalidad)
 {
     this->nombre = nombre;
     this->edad = edad;
+    this->tamanio = tamanio;
     this->especie = especie;
     this->personalidad = personalidad;
     this->hambre = 0;

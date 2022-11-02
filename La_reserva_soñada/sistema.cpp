@@ -37,13 +37,18 @@ void Sistema::mostrar_info_animal(int pos)
     lista.consulta(pos)->obtener_nombre();
     lista.consulta(pos)->obtener_edad();
     lista.consulta(pos)->obtener_tamanio();
-    lista.consulta(pos)->obtener_nombre();
+    lista.consulta(pos)->obtener_especie();
+    lista.consulta(pos)->mostrar_personalidad();
 }
+
 void Sistema::imprimir_lista(){
     int largo = lista.mostrar_cantidad() - 1; //el - 1 es porque lista siemrpe tiene 1 elemento menos que su cantidad
     for(int i = 0; i < largo; i++)
     {
-        lista.consulta(i)->mostrar_info();
+        lista.consulta(i)->obtener_nombre();
+        lista.consulta(i)->obtener_edad();
+        lista.consulta(i)->obtener_especie();
+        lista.consulta(i)->mostrar_personalidad();
     }
 }
 
@@ -109,7 +114,7 @@ int Sistema::esta_en_lista(string nombre)
 {
     for(int i = 0; i < lista.mostrar_cantidad(); i++)
     {
-        if(lista.consulta(i)->mostrar_nombre() == nombre)
+        if(lista.consulta(i)->obtener_nombre() == nombre)
             return i;
         
     }
