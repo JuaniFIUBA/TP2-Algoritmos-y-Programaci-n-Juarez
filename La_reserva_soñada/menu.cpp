@@ -89,7 +89,7 @@ bool Menu::solicitar_especie(char &especie)
 
 bool Menu::solicitar_datos()
 {
-    string nombre, tamanio, personalidad = " ";
+    string nombre = "", tamanio = "", personalidad = "";
     int edad = 0;
     char especie = ' ';
     cout << "Ingrese el nombre (Atención: El nombre no puede estar registrado previamente)" << endl;
@@ -114,8 +114,6 @@ bool Menu::solicitar_datos()
 
 void Menu::seleccionar_opcion()
 {
-
-    //bool reiniciar_solicitud = true;
 
     int opcion_elegida = 0;
     while(opcion_elegida != GUARDAR_Y_SALIR)

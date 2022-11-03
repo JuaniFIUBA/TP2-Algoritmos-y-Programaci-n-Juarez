@@ -16,7 +16,7 @@ class Animal
         string tamanio;
 
     protected:
-        char especie[1];
+        char especie;
 
         float hambre;
         float higiene;
@@ -41,7 +41,7 @@ class Animal
 
         //Pre:-
         //Post: Devuelve el tamanio del animal.
-        string obtener_especie();
+        char obtener_especie();
 
         //Pre:-
         //Post: Devuelve el tipo de personalidad del animal

@@ -81,21 +81,15 @@ void Lista<T>::borrar(int pos)
         actual = aux -> obtener_siguiente();
         aux -> nodo_siguiente(actual -> obtener_siguiente());
     }
-    cantidad_elementos--;
     delete actual;
+    cantidad_elementos--;
 }
 
 
 template <class T>
 T Lista<T>::consulta(int pos)
 {
-    Nodo<T>* aux = buscar_nodo(pos);
-
-    // if(pos == cantidad_elementos)
-    //     return 0;
-    // else
-    return aux -> obtener_dato();  
-    
+    return buscar_nodo(pos) -> obtener_dato();     
 }
 
 template <class T>

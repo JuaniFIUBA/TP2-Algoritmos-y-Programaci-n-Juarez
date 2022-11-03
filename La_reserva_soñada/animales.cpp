@@ -5,7 +5,7 @@ Animal::Animal(string nombre , int edad, string tamanio, char especie, Personali
     this->nombre = nombre;
     this->edad = edad;
     this->tamanio = tamanio;
-    this->especie[0] = especie;
+    this->especie = especie;
     this->personalidad = personalidad;
     this->personalidad_t = personalidad->mostrar_personalidad();
     this->hambre = 0;
@@ -21,7 +21,7 @@ int Animal::obtener_edad(){
     return edad;
 }
 
-string Animal::obtener_especie(){
+char Animal::obtener_especie(){
     return especie;
 }
 

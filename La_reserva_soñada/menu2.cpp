@@ -36,7 +36,7 @@ void Menu2::elegir_individualmente(){
     int i = 0;
     int opcion = 0;
     
-
+    cout << "llegue aca"<< endl;
     while(!escogido && i < sistema.obtener_lista().mostrar_cantidad()){
         sistema.mostrar_info_animal(i);
         cout<<"\t Por favor eliga una de las siguientes opciones\n";

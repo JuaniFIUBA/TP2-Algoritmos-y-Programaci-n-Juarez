@@ -26,6 +26,8 @@ class Menu
         //pre: 
         //pos:
         void adoptar_animal();
+        ~Menu(){};
+
     private:  
         //Pre: Debe recibir un entero.
         //Post: En caso de no ser válida la opción, le pide al usuario que la ingrese nuevamente.
@@ -49,7 +51,6 @@ class Menu
         //pre: 
         //pos: devuelve el string en minuscula (no devuelve Ñ en minúsculas)
         void a_minuscula(string &cadena);
-
 
 
 };

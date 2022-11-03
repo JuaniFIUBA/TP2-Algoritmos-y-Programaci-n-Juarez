@@ -19,7 +19,7 @@ class Menu2 : public Menu
     //pre:
     //post:
     void baniar_todos();
-     
+    ~Menu2(){};
 };
 
 #endif

@@ -30,15 +30,18 @@ void Sistema::leer_archivo(){
         getline(lista_animales, tamanio,',');
         getline(lista_animales, especie,',');
         getline(lista_animales, personalidad);
+        nombre[nombre.length()] = '\0';
+        tamanio[nombre.length()] = '\0';
+        personalidad[nombre.length()] = '\0';
+
         definir_personalidad(personalidad, i, nombre, stoi(edad), tamanio, especie[0]);
         i++;
-        cout<<"nombre"<<endl;
     }
     lista_animales.close();
 }
 
 Lista<Animal *> Sistema::obtener_lista(){
-    return lista;
+    return this->lista;
 }
 
 void Sistema::mostrar_info_animal(int pos)
@@ -138,7 +141,6 @@ int Sistema::esta_en_lista(string nombre)
 
 void Sistema::agregar_animal(std::string personalidad, std::string nombre, int edad, std::string tamanio, char especie)
 {
-    //chequear cada parametro por fuera
     definir_personalidad(personalidad, lista.mostrar_cantidad(), nombre, edad, tamanio ,especie);
 }
 
@@ -198,17 +200,12 @@ void Sistema::cerrar_archivo(){
         
         
     }   
-    //lista.~Lista();
     
 }
 
 Sistema::~Sistema(){
-    int i = 0;
-    while (lista.consulta(i))
-    {
+    for(int i = 0; i < lista.mostrar_cantidad(); i++)
         delete lista.consulta(i);
-        i++;
-    }
 }
 
 
