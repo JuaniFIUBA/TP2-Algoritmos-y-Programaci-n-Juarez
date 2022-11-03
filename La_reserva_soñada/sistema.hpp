@@ -41,6 +41,9 @@ public:
     //pre: 
     //pos:
     void agregar_animal(std::string personalidad, std::string nombre, int edad, std::string tamanio, char especie);
+    //pre:
+    //post: Muestra según el tamanio disponible los animales y una vez elegido uno de ellos lo elimina de la lista.
+    void adoptar_animal();
     //pre: 
     //pos: Actualiza el archivo "animales.csv" con las modificaciones realizadas por el usuario.
     void cerrar_archivo();
