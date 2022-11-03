@@ -13,7 +13,7 @@ class Roedor : public Animal
 
         //Leandro.A.Peñaloza
 
-        Roedor(string nombre, int edad, string especie, int tamanio, Personalidad *personalidad);
+        Roedor(string nombre, int edad, string tamanio, char especie, Personalidad *personalidad);
 
         //Pre:-
         //Post: Los roedores no necesitan bañarse, informa al usuario de esto.

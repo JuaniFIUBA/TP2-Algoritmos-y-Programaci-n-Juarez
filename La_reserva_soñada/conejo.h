@@ -8,7 +8,7 @@ class Conejo : public Animal
         //Pre: Recibe el nombre, edad, especie, tamanio y el modificador personalidad
         //Post: Crea un objeto Conejo perteneciente a la clase "Madre" Animal.
         //Leandro.A.Peñaloza
-        Conejo(string nombre, int edad, string tamanio, string especie, Personalidad *personalidad);
+        Conejo(string nombre, int edad, string tamanio, char especie, Personalidad *personalidad);
         
         //Pre:-
         //Post: El Conejo se bañara, aumentando su higiene a 100.

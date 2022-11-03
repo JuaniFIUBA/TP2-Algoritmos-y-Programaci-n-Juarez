@@ -15,7 +15,7 @@ class Animal
 
     protected:
 
-        string especie;
+        char especie[0];
 
         float hambre;
         float higiene;
@@ -28,7 +28,7 @@ class Animal
     public:
         //Pre: Recibe el nombre y edad del animal, además de una clase Personalidad que modifica el comportamiento.
         //Post: Crea un objeto Animal.
-        Animal(string nombre, int edad, string tamanio, string especie, Personalidad *);
+        Animal(string nombre, int edad, string tamanio, char especie, Personalidad *);
 
         //Pre: -
         //Post: Devuelve el nombre del animal.
@@ -56,7 +56,7 @@ class Animal
 
         //Pre:-
         //Post: Devuelve el tamanio del animal.
-        void obtener_tamanio(){};
+        string obtener_tamanio(){};
 
         //Pre:-
         //Post: Cuando el usuario interactue con el menu, la higiene y hambre de los animales cambiara con el tiempo.
