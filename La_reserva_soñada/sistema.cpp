@@ -30,9 +30,8 @@ void Sistema::leer_archivo(){
         getline(lista_animales, tamanio,',');
         getline(lista_animales, especie,',');
         getline(lista_animales, personalidad);
-        nombre[nombre.length()] = '\0';
-        tamanio[nombre.length()] = '\0';
-        personalidad[nombre.length()] = '\0';
+        
+        std::cout << tamanio << endl;
 
         definir_personalidad(personalidad, i, nombre, stoi(edad), tamanio, especie[0]);
         i++;
