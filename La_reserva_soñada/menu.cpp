@@ -8,7 +8,17 @@ const string TAMANIOS[] = {"diminuto", "pequenio", "mediano", "grande", "gigante
 const string PERSONALIDADES[] = {"jugueton", "travieso", "sociable", "dormilon"};
 const char ESPECIES[] = {'P', 'G', 'C', 'R', 'O', 'E', 'L'};
 
+enum opciones_menu{
+    LISTAR_ANIMALES = 1,
+    RESCATAR_ANIMAL,
+    BUSCAR_ANIMAL,
+    CUIDAR_ANIMAL,
+    ADOPTAR_ANIMAL,
+    GUARDAR_Y_SALIR
+};
+
 using namespace std;
+
 void Menu::mostrar_menu()
 {
     cout << "Bienvenido a la reserva soniada..." << endl;
@@ -106,10 +116,8 @@ bool Menu::solicitar_datos()
 
 void Menu::seleccionar_opcion()
 {
-    bool muestra_menu = true;
-    int opcion_elegida;
-
-    while(muestra_menu)
+    int opcion_elegida = 0;
+    while(opcion_elegida != GUARDAR_Y_SALIR)
     {        
         mostrar_menu();
         cin >> opcion_elegida;
@@ -124,6 +132,17 @@ void Menu::seleccionar_opcion()
             case 3:
                 buscar_animal();
                 break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                sistema.cerrar_archivo();
+                break;
+        }       
+    }
+    
+}
         }       
     }
 }
@@ -161,3 +180,4 @@ void Menu::buscar_animal()
     else   
         sistema.mostrar_info_animal(index_animal);
 }
+
