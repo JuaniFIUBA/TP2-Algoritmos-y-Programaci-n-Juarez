@@ -47,7 +47,7 @@ public:
     void a_minuscula(string &cadena);
     //pre: 
     //pos: devuelve la posicion en la lista en caso de que esté, -1 en caso de que no se haya encontrado
-    int esta_en_lista(string nombre); //mandarlo a menu
+    int esta_en_lista(string nombre); 
     //pre: 
     //pos:
     void agregar_animal(std::string personalidad, std::string nombre, int edad, std::string tamanio, char especie);
@@ -63,6 +63,8 @@ public:
 private:
     Animal* obtener_especie(std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie, Personalidad *personalidad);
     void definir_personalidad(std::string n_personalidad,int posicion, std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie);
+    void mostrar_animales_disponibles(int espacio_disponible);
+    void seleccionar_animal();
 };
 
 
