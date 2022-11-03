@@ -9,14 +9,14 @@ const int decrecimiento_higiene = 10;
 class Animal
 {
     private:
-    
+
         string nombre;
         int edad;
         string personalidad_t;
-        char especie[1];
         string tamanio;
 
     protected:
+        char especie[1];
 
         float hambre;
         float higiene;
