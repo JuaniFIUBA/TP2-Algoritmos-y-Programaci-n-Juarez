@@ -207,7 +207,7 @@ void Menu::mostrar_menu2(){
         cout<<"\t\t=========================="<<endl;
         cout<<"Ingrese una opción: ";
         cin >> opcion_elegida;//falta verificar opcion elegida
-        //validar_opcion(opcion_elegida);
+        validar_opcion(opcion_elegida);
         switch(opcion_elegida)
         {
             case 1:
