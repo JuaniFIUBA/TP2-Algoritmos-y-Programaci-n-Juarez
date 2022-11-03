@@ -1,6 +1,6 @@
 #include "animales.h"
 
-Animal::Animal(string nombre , int edad, string tamanio, string especie, Personalidad *personalidad)
+Animal::Animal(string nombre , int edad, string tamanio, char especie, Personalidad *personalidad)
 {
     this->nombre = nombre;
     this->edad = edad;
@@ -33,6 +33,10 @@ float Animal::obtener_hambre(){
 }
 float Animal::obtener_higiene(){
     return higiene;
+}
+
+string Animal::obtener_tamanio(){
+    return tamanio;
 }
 
 Animal::~Animal(){
