@@ -5,13 +5,13 @@
 class Perro : public Animal
 {
     private:
-        int tamanio;
+        string tamanio;
 
     public:
         //Pre: Recibe el nombre, edad, especie, tamanio y el modificador personalidad
         //Post: Crea un objeto Perro perteneciente a la clase "Madre" Animal.
         //Leandro.A.Peñaloza
-        Perro(string nombre, int edad, string especie, int tamanio, Personalidad *personalidad);
+        Perro(string nombre, int edad, string especie, string tamanio, Personalidad *personalidad);
         
         //Pre:-
         //Post: El Perro se bañara, aumentando su higiene a 100.

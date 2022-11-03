@@ -11,7 +11,7 @@ class Animal
     private:
         string nombre;
         int edad;
-        int tamanio;
+        string tamanio;
 
     protected:
 
@@ -28,7 +28,7 @@ class Animal
     public:
         //Pre: Recibe el nombre y edad del animal, además de una clase Personalidad que modifica el comportamiento.
         //Post: Crea un objeto Animal.
-        Animal(string nombre, int edad, int tamanio, string especie, Personalidad *);
+        Animal(string nombre, int edad, string tamanio, string especie, Personalidad *);
 
         //Pre: -
         //Post: Devuelve el nombre del animal.

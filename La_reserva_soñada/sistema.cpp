@@ -52,58 +52,58 @@ void Sistema::imprimir_lista(){
     }
 }
 
-Animal* Sistema::obtener_especie(std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie){
+Animal* Sistema::obtener_especie(std::string n_nombre, int n_edad, char n_especie, std::string n_tamanio, Personalidad* personalidad){
     if(n_especie == PERRO){
-        Animal* n_animal = new Perro(n_nombre,n_edad,n_tamanio);
+        Animal* n_animal = new Perro(n_nombre, n_edad, n_especie, n_tamanio, personalidad);
         return n_animal;
     }
     if(n_especie == GATO){
-        Animal* n_animal = new Gato(n_nombre,n_edad,n_tamanio);
+        Animal* n_animal = new Gato(n_nombre, n_edad, n_especie, n_tamanio, personalidad);
         return n_animal;
     }
     if(n_especie == CABALLO){
-        Animal* n_animal = new Caballo(n_nombre,n_edad,n_tamanio);
+        Animal* n_animal = new Caballo(n_nombre, n_edad, n_especie, n_tamanio, personalidad);
         return n_animal;
     }
     if(n_especie == ROEDOR){
-        Animal* n_animal = new Roedor(n_nombre,n_edad,n_tamanio);
+        Animal* n_animal = new Roedor(n_nombre, n_edad, n_especie, n_tamanio, personalidad);
         return n_animal;
     }
     if(n_especie == CONEJO){
-        Animal* n_animal = new Conejo(n_nombre,n_edad,n_tamanio);
+        Animal* n_animal = new Conejo(n_nombre, n_edad, n_especie, n_tamanio, personalidad);
         return n_animal;
     }
     if(n_especie == ERIZO){
-        Animal* n_animal = new Erizo(n_nombre,n_edad,n_tamanio);
+        Animal* n_animal = new Erizo(n_nombre, n_edad, n_especie, n_tamanio, personalidad);
         return n_animal;
     }else{
-        Animal* n_animal = new Lagartija(n_nombre,n_edad,n_tamanio);
+        Animal* n_animal = new Lagartija(n_nombre, n_edad, n_especie, n_tamanio, personalidad);
         return n_animal;    
     }
 }
 
 void Sistema::definir_personalidad(std::string n_personalidad,int posicion, std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie){
     if(n_personalidad == "dormilon"){
-        Personalidad* personalidad = new Dormilon(n_personalidad);
-        Animal* animal = obtener_especie(n_nombre,n_edad,n_tamanio,n_especie);
+        Personalidad* personalidad = new Dormilon();
+        Animal* animal = obtener_especie(n_nombre,n_edad,n_especie,n_tamanio,personalidad);
         animal->personalidad = personalidad;
         this->lista.agregar(animal,posicion);
     }
     if(n_personalidad == "jugueton"){
-        Personalidad* personalidad = new Jugueton(n_personalidad);
-        Animal* animal = obtener_especie(n_nombre,n_edad,n_tamanio,n_especie);
+        Personalidad* personalidad = new Jugueton();
+        Animal* animal = obtener_especie(n_nombre,n_edad,n_especie,n_tamanio,personalidad);
         animal->personalidad = personalidad;
         this->lista.agregar(animal,posicion);
     }
     if(n_personalidad == "sociable"){
-        Personalidad* personalidad = new Sociable(n_personalidad);
-        Animal* animal = obtener_especie(n_nombre,n_edad,n_tamanio,n_especie);
+        Personalidad* personalidad = new Sociable();
+        Animal* animal = obtener_especie(n_nombre,n_edad,n_especie,n_tamanio,personalidad);
         animal->personalidad = personalidad;
         this->lista.agregar(animal,posicion);
     }
     else{
-        Personalidad* personalidad = new Travieso(n_personalidad);
-        Animal* animal = obtener_especie(n_nombre,n_edad,n_tamanio,n_especie);
+        Personalidad* personalidad = new Travieso();
+        Animal* animal = obtener_especie(n_nombre,n_edad,n_especie,n_tamanio,personalidad);
         animal->personalidad = personalidad;
         this->lista.agregar(animal,posicion);
     }

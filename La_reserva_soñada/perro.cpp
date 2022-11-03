@@ -1,6 +1,6 @@
 #include "perro.h"
 
-Perro::Perro(string nombre, int edad, string especie, int tamanio, Personalidad *personalidad) : Animal(nombre, edad, tamanio, especie, personalidad){
+Perro::Perro(string nombre, int edad, string especie, string tamanio, Personalidad *personalidad) : Animal(nombre, edad, tamanio, especie, personalidad){
     this->tamanio = tamanio;
     this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene);
 }

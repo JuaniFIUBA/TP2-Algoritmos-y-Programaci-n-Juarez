@@ -1,7 +1,6 @@
-#include "Caballo.h"
+#include "caballo.h"
 
-Caballo::Caballo(string nombre, int edad, string especie, int tamanio, Personalidad *personalidad) : Animal(nombre, edad, especie, personalidad){
-    this->tamanio = tamanio;
+Caballo::Caballo(string nombre, int edad, string especie, string tamanio, Personalidad *personalidad) : Animal(nombre, edad, tamanio, especie, personalidad){
     this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene);
 }
 

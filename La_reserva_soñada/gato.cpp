@@ -1,6 +1,6 @@
 #include "gato.h"
 
-Gato::Gato(string nombre, int edad, string especie, int tamanio, Personalidad *personalidad) : Animal(nombre, edad, especie, personalidad){
+Gato::Gato(string nombre, int edad, string especie, string tamanio, Personalidad *personalidad) : Animal(nombre, edad, especie, personalidad){
     this->tamanio = tamanio;
     this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene);
 }
