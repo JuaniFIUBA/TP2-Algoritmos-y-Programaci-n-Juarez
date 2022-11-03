@@ -38,6 +38,7 @@ public:
     //pre: 
     //pos:
     void agregar_animal(std::string personalidad, std::string nombre, int edad, std::string tamanio, char especie);
+    void cerrar_archivo();
     ~Sistema();
 
 
