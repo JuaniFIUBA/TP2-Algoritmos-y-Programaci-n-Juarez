@@ -155,7 +155,7 @@ void Sistema::adoptar_animal()
     cout << "¿Desea elegir un animal de los listados para adoptar? S(sí), N(no)." << endl;
     cin >> input_usuario;//validar opcion
     // input_usuario.a_minuscula
-    if(input_usuario.find('s') != string::npos){
+    if(input_usuario.find('S') != string::npos){
         seleccionar_animal();
     }   
 }
