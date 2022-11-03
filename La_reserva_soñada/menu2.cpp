@@ -35,8 +35,6 @@ void Menu2::elegir_individualmente(){
     bool escogido = false;
     int i = 0;
     int opcion = 0;
-    
-    cout << "llegue aca"<< endl;
     while(!escogido && i < sistema.obtener_lista().mostrar_cantidad()){
         sistema.mostrar_info_animal(i);
         cout<<"\t Por favor eliga una de las siguientes opciones\n";
@@ -44,32 +42,34 @@ void Menu2::elegir_individualmente(){
         cout<<"2.Baniar\n";
         cout<<"3.Saltear al siguiente\n";
         cin>>opcion; //Falta validación
+        break;
         if(opcion == 1){
-            sistema.obtener_lista().consulta(i)->alimentarse();
+            sistema.baniar(i);
             escogido = true;
         }
         else if(opcion == 2){
-            sistema.obtener_lista().consulta(i)->lavarse();
+            sistema.baniar(i);
             escogido = true;
         }
         else if(opcion == 3){
             i++;
         }
     }
-    if(sistema.obtener_lista().mostrar_cantidad() == i){
-        cout<<"\t¡No hay más animales!"<<endl;
-    }
+    // if(sistema.obtener_lista().mostrar_cantidad() == i){
+    cout<<"\t¡No hay más animales!"<<endl;
+    // }
 }
 
 void Menu2::alimentar_todos(){
-    for(int i; i < sistema.obtener_lista().mostrar_cantidad(); i++){
-        sistema.obtener_lista().consulta(i)->alimentarse();
+    for(int i = 0; i < sistema.obtener_lista().mostrar_cantidad(); i++){
+        cout << i << endl;
+        sistema.alimentar(i);
     }
 }
 
 void Menu2::baniar_todos(){
-    for(int i; i < sistema.obtener_lista().mostrar_cantidad(); i++){
-        sistema.obtener_lista().consulta(i)->lavarse();
+    for(int i = 0; i < sistema.obtener_lista().mostrar_cantidad(); i++){
+        sistema.baniar(i);
     }
 }
   

@@ -8,7 +8,8 @@ class Menu
         Sistema sistema;
 
     public:
-        //pre:
+        void mostrar_menu2();
+
         //pos: muestra el menu en consola
         void mostrar_menu();
         //pre: 
@@ -22,7 +23,7 @@ class Menu
         void buscar_animal();
         //pre:
         //pos:
-        void cuidar_animal(); 
+        // void cuidar_animal(); 
         //pre: 
         //pos:
         void adoptar_animal();

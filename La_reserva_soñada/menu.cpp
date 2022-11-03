@@ -1,5 +1,5 @@
 #include "menu.h"
-#include "menu2.h"
+// #include "menu2.h"
 #include <iostream>
 #include <string>
 
@@ -133,7 +133,7 @@ void Menu::seleccionar_opcion()
                 buscar_animal();
                 break;
             case 4:
-                cuidar_animal();
+                mostrar_menu2();
                 break;
             case 5:
                 sistema.adoptar_animal();
@@ -190,10 +190,36 @@ void Menu::buscar_animal()
         sistema.mostrar_info_animal(index_animal);
 }
 
-void Menu::cuidar_animal()
-{
-    Menu2 minimenu = Menu2();
-    minimenu.mostrar_menu2();
 
+void Menu::mostrar_menu2(){
+    
+    int opcion_elegida = 0;
+    while(opcion_elegida != 4)
+    {        
+        cout<<"1. Elegir individualmente"<<endl;
+        cout<<"2. Alimentar a todos"<<endl;
+        cout<<"3. Baniar a todos"<<endl;
+        cout<<"4. Regresar al inicio"<<endl;
+        cout<<"Ingrese una opción: ";
+        cin >> opcion_elegida;//falta verificar opcion elegida
+        //validar_opcion(opcion_elegida);
+        switch(opcion_elegida)
+        {
+            case 1:
+                sistema.elegir_individualmente();
+                break;
+            case 2:    
+                sistema.alimentar_todos();
+                break;
+            case 3:
+                sistema.baniar_todos();
+                break;
+            case 4:
+                opcion_elegida = 4;
+                break;
+        }       
+    }
 }
 
+
+  

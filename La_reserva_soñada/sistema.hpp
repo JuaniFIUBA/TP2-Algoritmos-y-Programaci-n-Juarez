@@ -29,6 +29,13 @@ public:
     //pre: -
     //pos:  Devuelva la lista.
     Lista<Animal*> obtener_lista();
+    
+    void alimentar(int pos);
+    void baniar(int pos);
+    void elegir_individualmente();
+    void alimentar_todos();
+    void baniar_todos();
+    void actualizar_atributos();
     //pre: 
     //pos: muestra por pantalla los datos de los animales registrados
     void imprimir_lista();
