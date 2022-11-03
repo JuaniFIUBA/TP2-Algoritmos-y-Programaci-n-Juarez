@@ -1,4 +1,5 @@
 #include "menu.h"
+#include "menu2.h"
 #include <iostream>
 #include <string>
 
@@ -195,6 +196,7 @@ void Menu::buscar_animal()
 
 void Menu::cuidar_animal()
 {
+    Menu2 minimenu = Menu2();
     minimenu.mostrar_menu2();
 
 }

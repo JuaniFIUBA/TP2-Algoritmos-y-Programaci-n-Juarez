@@ -1,13 +1,9 @@
 #ifndef MENU_H
 #define MENU_H
 #include "sistema.hpp"
-#include "menu2.h"
 
 class Menu
 {
-    private:
-        Menu2 minimenu;
-
     protected:
         Sistema sistema;
 

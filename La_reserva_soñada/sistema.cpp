@@ -109,7 +109,6 @@ void Sistema::definir_personalidad(std::string n_personalidad,int posicion, std:
         Animal* animal = obtener_especie(n_nombre, n_edad, n_tamanio, n_especie, personalidad);
         this->lista.agregar(animal,posicion);
     }
-    cout<<"vuelta"<<endl;
     
 }
 
