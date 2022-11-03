@@ -30,8 +30,6 @@ void Sistema::leer_archivo(){
         getline(lista_animales, tamanio,',');
         getline(lista_animales, especie,',');
         getline(lista_animales, personalidad);
-        
-        std::cout << tamanio << endl;
 
         definir_personalidad(personalidad, i, nombre, stoi(edad), tamanio, especie[0]);
         i++;
@@ -40,13 +38,15 @@ void Sistema::leer_archivo(){
 }
 
 Lista<Animal *> Sistema::obtener_lista(){
-    return this->lista;
+    return this -> lista;
 }
 
 void Sistema::mostrar_info_animal(int pos)
 {
-    std::cout << "-----------------ANIMAL"<< pos+1<<"-----------------" << endl;
+    std::cout << "-----------------ANIMAL"<< pos + 1<<"-----------------" << endl;
     std::cout << "nombre: " << lista.consulta(pos)->obtener_nombre() << endl;
+    std::cout << "hambre: " << lista.consulta(pos)->obtener_hambre() << endl;
+    std::cout << "higiene: " << lista.consulta(pos)->obtener_higiene() << endl;
     std::cout << "edad: " << lista.consulta(pos)->obtener_edad() << endl;
     std::cout << "tamaño: " << lista.consulta(pos)->obtener_tamanio() << endl;
     std::cout << "especie: " <<lista.consulta(pos)->obtener_especie() << endl;
@@ -185,6 +185,15 @@ void Sistema::mostrar_animales_disponibles(int espacio_disponible){
         }
     }
 }
+void Sistema::alimentar(int pos)
+{
+    lista.consulta(pos)->alimentarse();
+}
+
+void Sistema::baniar(int pos)
+{
+    lista.consulta(pos)->lavarse();
+}
 
 void Sistema::seleccionar_animal(){
     string nombre;
@@ -216,11 +225,57 @@ void Sistema::cerrar_archivo(){
     }   
     
 }
+void Sistema::elegir_individualmente(){
+    bool escogido = false;
+    int i = 0;
+    int opcion = 0;
+    while(!escogido && i < lista.mostrar_cantidad()){
+        mostrar_info_animal(i);
+        cout<<"\t Por favor eliga una de las siguientes opciones\n";
+        cout<<"1.Alimentar\n";
+        cout<<"2.Baniar\n";
+        cout<<"3.Saltear al siguiente\n";
+        cin>>opcion; //Falta validación
+        break;
+        if(opcion == 1){
+            baniar(i);
+            escogido = true;
+        }
+        else if(opcion == 2){
+            baniar(i);
+            escogido = true;
+        }
+        else if(opcion == 3){
+            i++;
+        }
+    }
+    if(lista.mostrar_cantidad() == i){
+        cout<<"\t¡No hay más animales!"<<endl;
+    }
+}
+
+void Sistema::alimentar_todos(){
+    for(int i = 0; i < lista.mostrar_cantidad(); i++){
+        cout << i << endl;
+        alimentar(i);
+    }
+}
+
+void Sistema::baniar_todos(){
+    for(int i = 0; i < lista.mostrar_cantidad(); i++){
+        baniar(i);
+    }
+}
+void Sistema::actualizar_atributos()
+{
+    int largo_lista = lista.mostrar_cantidad();
+    for(int i = 0; i < largo_lista; i++)
+        lista.consulta(i)->pasar_tiempo();
+}
 
 Sistema::~Sistema(){
     for(int i = 0; i < lista.mostrar_cantidad(); i++)
         delete lista.consulta(i);
 }
-
 
 
