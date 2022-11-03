@@ -129,7 +129,8 @@ void Sistema::a_minuscula(string &cadena)
 //devuelve la posicion si lo encuentra y -1 en el caso de que no encuentre el nombre
 int Sistema::esta_en_lista(string nombre)
 {
-    for(int i = 0; i < lista.mostrar_cantidad(); i++)
+    int largo_lista = lista.mostrar_cantidad();
+    for(int i = 0; i < largo_lista; i++)
     {
         if(lista.consulta(i)->obtener_nombre() == nombre)
             return i;
@@ -153,7 +154,8 @@ void Sistema::adoptar_animal()
     string input_usuario;
     cout << "¿Desea elegir un animal de los listados para adoptar? S(sí), N(no)." << endl;
     cin >> input_usuario;//validar opcion
-    if(input_usuario == "S"){
+    // input_usuario.a_minuscula
+    if(input_usuario.find('s') != string::npos){
         seleccionar_animal();
     }   
 }
@@ -205,7 +207,9 @@ void Sistema::seleccionar_animal(){
         cout << "No se encontró ningún animal que se llame <" << nombre << ">." << endl;
     else{
         cout << "Felicidades! Ha adoptado a " << nombre << endl;
+        Animal* aux = lista.consulta(pos_animal);
         lista.borrar(pos_animal);
+        delete aux;
     }   
 }
 
@@ -284,7 +288,8 @@ void Sistema::actualizar_atributos()
 }
 
 Sistema::~Sistema(){
-    for(int i = 0; i < lista.mostrar_cantidad(); i++)
+    int largo_lista = lista.mostrar_cantidad();
+    for(int i = 0; i < largo_lista; i++)
         delete lista.consulta(i);
 }
 
