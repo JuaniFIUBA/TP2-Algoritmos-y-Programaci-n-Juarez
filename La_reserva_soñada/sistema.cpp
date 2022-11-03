@@ -148,7 +148,18 @@ void Sistema::adoptar_animal()
 {
     int espacio_disponible;
     cout<<"Indicar el espacio disponible en metros cuadrados:"<<endl;
-    cin>>espacio_disponible;
+    cin>>espacio_disponible;//validar espacio
+    mostrar_animales_disponibles(espacio_disponible);
+    
+    string input_usuario;
+    cout << "¿Desea elegir un animal de los listados para adoptar? S(sí), N(no)." << endl;
+    cin >> input_usuario;//validar opcion
+    if(input_usuario == "S"){
+        seleccionar_animal();
+    }   
+}
+
+void Sistema::mostrar_animales_disponibles(int espacio_disponible){
     for(int i = 0; i < lista.mostrar_cantidad(); i++){
         if (espacio_disponible >= GIGANTE){
             mostrar_info_animal(i);
@@ -174,18 +185,22 @@ void Sistema::adoptar_animal()
             }
         }
     }
-    
-    string input_usuario;
-    cout << "¿Desea elegir un animal de los listados para adoptar? S(sí), N(no)." << endl;
-    cin >> input_usuario;
-    a_minuscula(input_usuario);
-    if(input_usuario == "s"){
-        
-    }
-    
-    
-    
 }
+
+void Sistema::seleccionar_animal(){
+    string nombre;
+    cout << "Ingrese el nombre de un animal disponible: " << endl;
+    cin.ignore();
+    getline(cin, nombre);
+    int pos_animal = esta_en_lista(nombre);
+    if(pos_animal == -1)
+        cout << "No se encontró ningún animal que se llame <" << nombre << ">." << endl;
+    else{
+        cout << "Felicidades! Ha adoptado a " << nombre << endl;
+        lista.borrar(pos_animal);
+    }   
+}
+
 
 void Sistema::cerrar_archivo(){
     
