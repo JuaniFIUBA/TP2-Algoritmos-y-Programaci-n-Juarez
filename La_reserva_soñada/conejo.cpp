@@ -14,7 +14,7 @@ void Conejo::lavarse(){
 }
 
 void Conejo::alimentarse(){
-    cout<<"Alimentaste al "<<especie<<", "<<Animal::obtener_nombre()<<" con lechuga "<<endl;
+    cout<<"Alimentaste al "<<especie_t<<", "<<Animal::obtener_nombre()<<" con lechuga "<<endl;
     hambre = 0;
 
 }

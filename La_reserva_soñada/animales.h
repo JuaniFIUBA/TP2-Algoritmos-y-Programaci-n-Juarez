@@ -61,7 +61,7 @@ class Animal
 
         //Pre:- 
         //Post: Devuelve la especie del animal completa
-        virtual string devolver_especie(){} 
+        virtual string devolver_especie(){return "especie";} 
 
         //Pre:-
         //Post: Cuando el usuario interactue con el menu, la higiene y hambre de los animales cambiara con el tiempo.

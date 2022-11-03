@@ -32,7 +32,7 @@ void Menu::mostrar_menu()
     cout << "4. Cuidar animales" << endl;
     cout << "5. Adoptar animal" << endl;
     cout << "6. Guardar y salir" << endl;
-    cout << "Seleccione una opcion de las indicadas anteriormente para continuar" << endl;
+    cout << "Seleccione una opcion de las indicadas anteriormente para continuar: ";
 }
 
 
@@ -197,10 +197,14 @@ void Menu::mostrar_menu2(){
     int opcion_elegida = 0;
     while(opcion_elegida != 4)
     {        
+        cout<<endl;
+        cout<<"\t\t=========================="<<endl;
+        cout<<"\t Por favor eliga una de las siguientes opciones\n";
         cout<<"1. Elegir individualmente"<<endl;
         cout<<"2. Alimentar a todos"<<endl;
         cout<<"3. Baniar a todos"<<endl;
         cout<<"4. Regresar al inicio"<<endl;
+        cout<<"\t\t=========================="<<endl;
         cout<<"Ingrese una opción: ";
         cin >> opcion_elegida;//falta verificar opcion elegida
         //validar_opcion(opcion_elegida);

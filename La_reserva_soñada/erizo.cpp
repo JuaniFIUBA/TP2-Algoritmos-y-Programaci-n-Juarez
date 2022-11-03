@@ -14,7 +14,7 @@ void Erizo::lavarse(){
 }
 
 void Erizo::alimentarse(){
-    cout<<"Alimentaste al "<<especie<<", "<<Animal::obtener_nombre()<<" con insectos"<<endl;
+    cout<<"Alimentaste al "<<especie_t<<", "<<Animal::obtener_nombre()<<" con insectos"<<endl;
     hambre = 0;
 
 }
