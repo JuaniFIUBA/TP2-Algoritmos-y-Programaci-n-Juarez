@@ -34,23 +34,19 @@ void Sistema::leer_archivo(){
 
 void Sistema::mostrar_info_animal(int pos)
 {
-    lista.consulta(pos)->obtener_nombre();
-    lista.consulta(pos)->obtener_edad();
-    lista.consulta(pos)->obtener_tamanio();
-    lista.consulta(pos)->obtener_especie();
-    lista.consulta(pos)->mostrar_personalidad();
+    std::cout << "----------------------------------------" << endl;
+    std::cout << "nombre: " << lista.consulta(pos)->obtener_nombre() << endl;
+    std::cout << "edad: " << lista.consulta(pos)->obtener_edad() << endl;
+    std::cout << "tamaño: " << lista.consulta(pos)->obtener_tamanio() << endl;
+    std::cout << "especie: " <<lista.consulta(pos)->obtener_especie() << endl;
+    std::cout << "personalidad: " <<lista.consulta(pos)->mostrar_personalidad() << endl;
+    std::cout << "----------------------------------------" << endl;
 }
 
 void Sistema::imprimir_lista(){
     int largo = lista.mostrar_cantidad() - 1; //el - 1 es porque lista siemrpe tiene 1 elemento menos que su cantidad
     for(int i = 0; i < largo; i++)
-    {
-        cout<<lista.consulta(i)->obtener_nombre()<<endl;
-        cout<<lista.consulta(i)->obtener_edad()<<endl;
-        cout<<lista.consulta(i)->obtener_especie()<<endl;
-        cout<<lista.consulta(i)->obtener_tamanio()<<endl;
-        cout<<lista.consulta(i)->mostrar_personalidad()<<endl;
-    }
+        mostrar_info_animal(i);    
 }
 
 Animal* Sistema::obtener_especie(std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie, Personalidad* personalidad){

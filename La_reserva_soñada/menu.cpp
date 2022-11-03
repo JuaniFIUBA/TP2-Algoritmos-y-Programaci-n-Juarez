@@ -56,6 +56,7 @@ bool Menu::solicitar_tamanio(string &tamanio)
 {
     cout << "Ingrese un tamanio (en minúsculas): (diminuto, pequenio, mediano, grande o gigante)" << endl;
     getline(cin, tamanio);
+    a_minuscula(tamanio);
     if(!verificar_dato<string>(tamanio, (string*)TAMANIOS, CANTIDAD_TAMANIOS))
     {
         cout << "El tamanio <" << tamanio << "> ingresado es inválido." << endl;
@@ -67,7 +68,7 @@ bool Menu::solicitar_tamanio(string &tamanio)
 bool Menu::solicitar_especie(char &especie)
 {
     cout << "Ingrese una de las letras que se mostrarán a continuación para indicar la especie: " << endl;
-    cout << "P: Perro, G: Gato, C: Caballo, R: Roedor, C: Conejo, E: Erizo, L: Lagartija " << endl;
+    cout << "P: Perro, G: Gato, C: Caballo, R: Roedor, O: Conejo, E: Erizo, L: Lagartija " << endl;
     cin >> especie;
     especie = (char)toupper(especie);
     if(!verificar_dato<char>(especie, (char*)ESPECIES, CANTIDAD_ESPECIES))
@@ -106,47 +107,57 @@ bool Menu::solicitar_datos()
 void Menu::seleccionar_opcion()
 {
     bool muestra_menu = true;
-    bool reiniciar_solicitud = true;
     int opcion_elegida;
-    string input_usuario;
 
     while(muestra_menu)
     {        
         mostrar_menu();
         cin >> opcion_elegida;
-        reiniciar_solicitud = true;
         switch(opcion_elegida)
         {
             case 1:
                 sistema.imprimir_lista();
                 break;
             case 2:    
-                while(reiniciar_solicitud)
-                {
-                    if(!solicitar_datos())
-                    {
-                        cout << "Desea ingresar nuevamente los datos? S(sí), N(no)." << endl;
-                        cin >> input_usuario;
-                        a_minuscula(input_usuario);
-                        if(input_usuario.find('n') != string::npos)
-                            reiniciar_solicitud = false;
-                    }
-                    else    
-                        reiniciar_solicitud = false;
-                }
+                rescatar_animal();
                 break;
             case 3:
-                string nombre;
-                cout << "Ingrese el nombre" << endl;
-                cin.ignore();
-                getline(cin, nombre);
-                int index_animal = sistema.esta_en_lista(nombre);
-                if(index_animal == -1)
-                    cout << "No se encontró ningún animal que se llame <" << nombre << ">." << endl;
-                else   
-                    sistema.mostrar_info_animal(index_animal);
+                buscar_animal();
                 break;
-            
         }       
     }
+}
+
+
+void Menu::rescatar_animal()
+{
+    bool reiniciar_solicitud = true;
+    string input_usuario;
+
+    while(reiniciar_solicitud)
+    {
+        if(!solicitar_datos())
+        {
+            cout << "Desea ingresar nuevamente los datos? S(sí), N(no)." << endl;
+            cin >> input_usuario;
+            a_minuscula(input_usuario);
+            if(input_usuario.find('n') != string::npos)
+                reiniciar_solicitud = false;
+        }
+        else    
+            reiniciar_solicitud = false;
+    }
+}
+
+void Menu::buscar_animal()
+{
+    string nombre;
+    cout << "Ingrese el nombre" << endl;
+    cin.ignore();
+    getline(cin, nombre);
+    int index_animal = sistema.esta_en_lista(nombre);
+    if(index_animal == -1)
+        cout << "No se encontró ningún animal que se llame <" << nombre << ">." << endl;
+    else   
+        sistema.mostrar_info_animal(index_animal);
 }
