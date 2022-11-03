@@ -25,9 +25,10 @@ void Sistema::leer_archivo(){
         getline(lista_animales, edad,',');
         getline(lista_animales, tamanio,',');
         getline(lista_animales, especie,',');
-        getline(lista_animales, personalidad,'\n');
-        definir_personalidad(personalidad, i, nombre, stoi(edad), tamanio, especie[0]);
+        getline(lista_animales, personalidad);
         i++;
+        definir_personalidad(personalidad, i, nombre, stoi(edad), tamanio, especie[0]);
+        cout<<nombre<<endl;
     }
     lista_animales.close();
 }
@@ -45,11 +46,13 @@ void Sistema::imprimir_lista(){
     int largo = lista.mostrar_cantidad() - 1; //el - 1 es porque lista siemrpe tiene 1 elemento menos que su cantidad
     for(int i = 0; i < largo; i++)
     {
+        cout<<"==============ANIMAL============"<< i+1<<endl;
         cout<<lista.consulta(i)->obtener_nombre()<<endl;
         cout<<lista.consulta(i)->obtener_edad()<<endl;
         cout<<lista.consulta(i)->obtener_especie()<<endl;
         cout<<lista.consulta(i)->obtener_tamanio()<<endl;
         cout<<lista.consulta(i)->mostrar_personalidad()<<endl;
+        cout<<endl;
     }
 }
 
@@ -84,17 +87,18 @@ Animal* Sistema::obtener_especie(std::string n_nombre, int n_edad, std::string n
 }
 
 void Sistema::definir_personalidad(std::string n_personalidad,int posicion, std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie){
+   
     if(n_personalidad == "dormilon"){
         Personalidad* personalidad = new Dormilon();
         Animal* animal = obtener_especie(n_nombre, n_edad, n_tamanio, n_especie, personalidad);
         this->lista.agregar(animal,posicion);
     }
-    if(n_personalidad == "jugueton"){
+    else if(n_personalidad == "jugueton"){
         Personalidad* personalidad = new Jugueton();
         Animal* animal = obtener_especie(n_nombre, n_edad, n_tamanio, n_especie, personalidad);
         this->lista.agregar(animal,posicion);
     }
-    if(n_personalidad == "sociable"){
+    else if(n_personalidad == "sociable"){
         Personalidad* personalidad = new Sociable();
         Animal* animal = obtener_especie(n_nombre, n_edad, n_tamanio, n_especie, personalidad);
         this->lista.agregar(animal,posicion);
@@ -104,6 +108,8 @@ void Sistema::definir_personalidad(std::string n_personalidad,int posicion, std:
         Animal* animal = obtener_especie(n_nombre, n_edad, n_tamanio, n_especie, personalidad);
         this->lista.agregar(animal,posicion);
     }
+    cout<<"vuelta"<<endl;
+    
 }
 
 //devuelve la posicion si lo encuentra y -1 en el caso de que no encuentre el nombre

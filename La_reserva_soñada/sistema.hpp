@@ -38,6 +38,8 @@ public:
     //pre: 
     //pos:
     void agregar_animal(std::string personalidad, std::string nombre, int edad, std::string tamanio, char especie);
+    //pre: 
+    //pos: Actualiza el archivo "animales.csv" con las modificaciones realizadas por el usuario.
     void cerrar_archivo();
     ~Sistema();
 

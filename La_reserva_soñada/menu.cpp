@@ -115,7 +115,6 @@ bool Menu::solicitar_datos()
 
 void Menu::seleccionar_opcion()
 {
-    bool muestra_menu = true;
     bool reiniciar_solicitud = true;
     int opcion_elegida = 0;
     string input_usuario;
@@ -156,13 +155,13 @@ void Menu::seleccionar_opcion()
                 else   
                     sistema.mostrar_info_animal(index_animal);
                 break;
-            case 4:
+            /*case 4:
                 break;
             case 5:
                 break;
             case 6:
                 sistema.cerrar_archivo();
-                break;
+                break;*/
         }       
     }
     
