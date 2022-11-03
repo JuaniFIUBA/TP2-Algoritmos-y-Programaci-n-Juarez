@@ -34,7 +34,7 @@ public:
     void mostrar_info_animal(int pos);
     //pre: 
     //pos: devuelve la posicion en la lista en caso de que esté, -1 en caso de que no se haya encontrado
-    int esta_en_lista(string nombre);
+    int esta_en_lista(string nombre); //mandarlo a menu
     //pre: 
     //pos:
     void agregar_animal(std::string personalidad, std::string nombre, int edad, std::string tamanio, char especie);
