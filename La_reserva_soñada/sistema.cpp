@@ -255,14 +255,15 @@ void Sistema::elegir_individualmente(){
 }
 
 void Sistema::alimentar_todos(){
-    for(int i = 0; i < lista.mostrar_cantidad(); i++){
-        cout << i << endl;
+    int largo_lista = lista.mostrar_cantidad();
+    for(int i = 0; i < largo_lista; i++)
         alimentar(i);
-    }
+    
 }
 
 void Sistema::baniar_todos(){
-    for(int i = 0; i < lista.mostrar_cantidad(); i++){
+    int largo_lista = lista.mostrar_cantidad();
+    for(int i = 0; i < largo_lista; i++){
         baniar(i);
     }
 }
