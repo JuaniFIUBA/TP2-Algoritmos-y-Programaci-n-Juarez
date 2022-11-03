@@ -117,7 +117,7 @@ bool Menu::solicitar_datos()
 void Menu::seleccionar_opcion()
 {
 
-    bool reiniciar_solicitud = true;
+    //bool reiniciar_solicitud = true;
 
     int opcion_elegida = 0;
     while(opcion_elegida != GUARDAR_Y_SALIR)
