@@ -203,7 +203,7 @@ void Menu::mostrar_menu2(){
         cout<<"4. Regresar al inicio"<<endl;
         cout<<"Ingrese una opción: ";
         cin >> opcion_elegida;//falta verificar opcion elegida
-        //validar_opcion(opcion_elegida);
+        validar_opcion(opcion_elegida);
         switch(opcion_elegida)
         {
             case 1:
