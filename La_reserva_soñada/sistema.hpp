@@ -36,6 +36,9 @@ public:
     //pos: muestra todas las características del animal en la posición <<pos>>
     void mostrar_info_animal(int pos);
     //pre: 
+    //pos: devuelve el string en minuscula (no devuelve Ñ en minúsculas)
+    void a_minuscula(string &cadena);
+    //pre: 
     //pos: devuelve la posicion en la lista en caso de que esté, -1 en caso de que no se haya encontrado
     int esta_en_lista(string nombre); //mandarlo a menu
     //pre: 

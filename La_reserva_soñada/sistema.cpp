@@ -116,6 +116,14 @@ void Sistema::definir_personalidad(std::string n_personalidad,int posicion, std:
     
 }
 
+void Sistema::a_minuscula(string &cadena)
+{
+    int largo_cadena = (int)cadena.length();
+    for(int i = 0; i < largo_cadena; i++)
+        cadena[i] = (char)tolower(cadena[i]);
+    
+}
+
 //devuelve la posicion si lo encuentra y -1 en el caso de que no encuentre el nombre
 int Sistema::esta_en_lista(string nombre)
 {
@@ -164,19 +172,32 @@ void Sistema::adoptar_animal()
             }
         }
     }
+    
+    string input_usuario;
+    cout << "¿Desea elegir un animal de los listados para adoptar? S(sí), N(no)." << endl;
+    cin >> input_usuario;
+    a_minuscula(input_usuario);
+    if(input_usuario == "s"){
+        
+    }
+    
+    
+    
 }
 
 void Sistema::cerrar_archivo(){
     
     ofstream lista_animales ("animales.csv");
-
-    for(int i = 0; i < lista.mostrar_cantidad(); i++){
+    int cantidad_elementos = lista.mostrar_cantidad();
+    for(int i = 0; i < cantidad_elementos; i++){
         lista_animales << lista.consulta(i)->obtener_nombre() << ',' 
                        << lista.consulta(i)->obtener_edad() << ',' 
                        << lista.consulta(i)->obtener_tamanio() << ',' 
                        << lista.consulta(i)->obtener_especie() << ',' 
                        << lista.consulta(i)->mostrar_personalidad() << '\n';
-    }
+        
+        lista.borrar(i);
+    }   
     lista.~Lista();
 }
 

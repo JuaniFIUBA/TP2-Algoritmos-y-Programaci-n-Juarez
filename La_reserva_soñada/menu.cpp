@@ -35,13 +35,7 @@ void Menu::mostrar_menu()
     cout << "Seleccione una opcion de las indicadas anteriormente para continuar" << endl;
 }
 
-void Menu::a_minuscula(string &cadena)
-{
-    int largo_cadena = (int)cadena.length();
-    for(int i = 0; i < largo_cadena; i++)
-        cadena[i] = (char)tolower(cadena[i]);
-    
-}
+
 
 template <typename T>
 bool Menu::verificar_dato(T dato, T* array_datos, int largo_array)
@@ -58,7 +52,7 @@ bool Menu::solicitar_personalidad(string &personalidad)
 {
     cout << "Ingrese una personalidad: (jugueton, travieso, sociable o dormilon)" << endl;
     getline(cin, personalidad);
-    a_minuscula(personalidad);
+    sistema.a_minuscula(personalidad);
     if(!verificar_dato<string>(personalidad, (string*)PERSONALIDADES, CANTIDAD_PERSONALIDADES))
     {
         cout << "La personalidad ingresada es inválida" << endl;
@@ -70,7 +64,7 @@ bool Menu::solicitar_tamanio(string &tamanio)
 {
     cout << "Ingrese un tamanio (en minúsculas): (diminuto, pequeño, mediano, grande o gigante)" << endl;
     getline(cin, tamanio);
-    a_minuscula(tamanio);
+    sistema.a_minuscula(tamanio);
     if(!verificar_dato<string>(tamanio, (string*)TAMANIOS, CANTIDAD_TAMANIOS))
     {
         cout << "El tamanio <" << tamanio << "> ingresado es inválido." << endl;
@@ -177,7 +171,7 @@ void Menu::rescatar_animal()
         {
             cout << "Desea ingresar nuevamente los datos? S(sí), N(no)." << endl;
             cin >> input_usuario;
-            a_minuscula(input_usuario);
+            sistema.a_minuscula(input_usuario);
             if(input_usuario.find('n') != string::npos)
                 reiniciar_solicitud = false;
         }

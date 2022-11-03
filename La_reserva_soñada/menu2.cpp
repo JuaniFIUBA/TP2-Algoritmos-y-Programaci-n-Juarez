@@ -4,7 +4,7 @@
 void Menu2::mostrar_menu2(){
     
     int opcion_elegida = 0;
-    while(opcion_elegida != -1)
+    while(opcion_elegida != 4)
     {        
         cout<<"1. Elegir individualmente"<<endl;
         cout<<"2. Alimentar a todos"<<endl;
@@ -25,7 +25,7 @@ void Menu2::mostrar_menu2(){
                 baniar_todos();
                 break;
             case 4:
-                regresar();
+                opcion_elegida = 4;
                 break;
         }       
     }
@@ -72,7 +72,4 @@ void Menu2::baniar_todos(){
         sistema.obtener_lista().consulta(i)->lavarse();
     }
 }
-    
-void Menu2::regresar(){
-
-}  
+  

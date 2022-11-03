@@ -19,10 +19,7 @@ class Menu2 : public Menu
     //pre:
     //post:
     void baniar_todos();
-    
-    //pre
-    //post:
-    void regresar();  
+     
 };
 
 #endif
