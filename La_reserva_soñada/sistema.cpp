@@ -45,12 +45,12 @@ void Sistema::mostrar_info_animal(int pos)
 {
     std::cout << "-----------------ANIMAL"<< pos + 1<<"-----------------" << endl;
     std::cout << "nombre: " << lista.consulta(pos)->obtener_nombre() << endl;
-    std::cout << "hambre: " << lista.consulta(pos)->obtener_hambre() << endl;
-    std::cout << "higiene: " << lista.consulta(pos)->obtener_higiene() << endl;
     std::cout << "edad: " << lista.consulta(pos)->obtener_edad() << endl;
     std::cout << "tamaño: " << lista.consulta(pos)->obtener_tamanio() << endl;
-    std::cout << "especie: " <<lista.consulta(pos)->obtener_especie() << endl;
+    std::cout << "especie: " <<lista.consulta(pos)->devolver_especie() << endl;
     std::cout << "personalidad: " <<lista.consulta(pos)->mostrar_personalidad() << endl;
+    std::cout << "hambre: " << lista.consulta(pos)->obtener_hambre() << endl;
+    std::cout << "higiene: " << lista.consulta(pos)->obtener_higiene() << endl;
     std::cout << "----------------------------------------" << endl;
 }
 
