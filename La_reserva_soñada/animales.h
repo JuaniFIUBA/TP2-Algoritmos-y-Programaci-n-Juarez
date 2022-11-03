@@ -11,11 +11,12 @@ class Animal
     private:
         string nombre;
         int edad;
-        string tamanio;
 
     protected:
 
-        char especie[0];
+        char especie[1];
+
+        string tamanio;
 
         float hambre;
         float higiene;
@@ -56,7 +57,7 @@ class Animal
 
         //Pre:-
         //Post: Devuelve el tamanio del animal.
-        string obtener_tamanio(){};
+        string obtener_tamanio();
 
         //Pre:-
         //Post: Cuando el usuario interactue con el menu, la higiene y hambre de los animales cambiara con el tiempo.
@@ -68,12 +69,11 @@ class Animal
 
         //Pre:-
         //Post: Se baña al animal.
-        virtual void lavarse();
+        virtual void lavarse(){}
 
         //Pre:
         //Post: Destruye al objeto animal, liberando el espacio.
         virtual ~Animal();
-
 };
 
 #endif

@@ -23,13 +23,24 @@ private:
 
 public:
     Sistema();
+    //pre: el archivo está en formato csv correcto (ordenado) 
+    //pos: crea una lista de <Aninimal*>
     void leer_archivo();
+    //pre: 
+    //pos: muestra por pantalla los datos de los animales registrados
     void imprimir_lista();
+    //pre: pos < cantidad_elementos (lista)
+    //pos: muestra todas las características del animal en la posición <<pos>>
     void mostrar_info_animal(int pos);
+    //pre: 
+    //pos: devuelve la posicion en la lista en caso de que esté, -1 en caso de que no se haya encontrado
     int esta_en_lista(string nombre);
+    //pre: 
+    //pos:
     void agregar_animal(std::string personalidad, std::string nombre, int edad, std::string tamanio, char especie);
     void cerrar_archivo();
     ~Sistema();
+
 
 private:
     Animal* obtener_especie(std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie, Personalidad *personalidad);

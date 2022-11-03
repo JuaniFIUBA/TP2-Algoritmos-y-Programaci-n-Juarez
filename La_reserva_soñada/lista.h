@@ -8,7 +8,6 @@ class Lista
 {
     private:
         Nodo<T>* primero;
-        Nodo<T>* cursor;
         int cantidad_elementos;
     public:
         //constructor
@@ -40,7 +39,6 @@ template<class T>
 Lista<T>::Lista()
 {
     primero = nullptr;
-    cursor = primero;
     cantidad_elementos = 0;
 } 
 
