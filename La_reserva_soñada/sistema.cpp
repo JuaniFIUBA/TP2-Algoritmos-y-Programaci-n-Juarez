@@ -127,6 +127,22 @@ void Sistema::agregar_animal(std::string personalidad, std::string nombre, int e
     definir_personalidad(personalidad, lista.mostrar_cantidad(), nombre, edad, tamanio ,especie);
 }
 
+void Sistema::cerrar_archivo(){
+    
+    ofstream lista_animales ("animales.csv");
+
+    for(int i = 0; i < lista.mostrar_cantidad(); i++){
+        lista_animales << lista.consulta(i)->obtener_nombre() << ',' 
+                       << lista.consulta(i)->obtener_edad() << ',' 
+                       << lista.consulta(i)->obtener_tamanio() << ',' 
+                       << lista.consulta(i)->obtener_especie() << ',' 
+                       << lista.consulta(i)->mostrar_personalidad() << '\n';
+
+
+        lista.borrar(i);
+    }
+    lista.~Lista();
+}
 
 Sistema::~Sistema(){
     int i = 0;
