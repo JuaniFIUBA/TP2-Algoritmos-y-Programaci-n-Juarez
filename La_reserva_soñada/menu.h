@@ -4,8 +4,9 @@
 
 class Menu
 {
-    private:
+    protected:
         Sistema sistema;
+
     public:
         //pre:
         //pos: muestra el menu en consola
@@ -19,6 +20,9 @@ class Menu
         //pre:
         //pos: busca e imprime las características del animal ingresado por el usuario (busca por nombre)
         void buscar_animal();
+        //pre:
+        //pos:
+        void cuidar_animal(); 
         //pre: 
         //pos:
         void adoptar_animal();

@@ -1,6 +1,8 @@
 #include "menu.h"
+#include "menu2.h"
 #include <iostream>
 #include <string>
+
 const int CANTIDAD_PERSONALIDADES = 4;
 const int CANTIDAD_TAMANIOS =  5;
 const int CANTIDAD_ESPECIES = 7;
@@ -136,9 +138,10 @@ void Menu::seleccionar_opcion()
             case 3:
                 buscar_animal();
                 break;
-            /*case 4:
+            case 4:
+                cuidar_animal();
                 break;
-            case 5:
+            /*case 5:
                 break;
             case 6:
                 sistema.cerrar_archivo();
@@ -178,7 +181,6 @@ void Menu::rescatar_animal()
             reiniciar_solicitud = false;
     }
 }
-
 void Menu::buscar_animal()
 {
     string nombre;
@@ -190,6 +192,13 @@ void Menu::buscar_animal()
         cout << "No se encontró ningún animal que se llame <" << nombre << ">." << endl;
     else   
         sistema.mostrar_info_animal(index_animal);
+}
+
+void Menu::cuidar_animal()
+{
+    Menu2 minimenu = Menu2();
+    minimenu.mostrar_menu2();
+
 }
 
 void Menu::adoptar_animal()
