@@ -145,6 +145,8 @@ void Menu::seleccionar_opcion()
                     cout << "No se encontró ningún animal que se llame <" << nombre << ">." << endl;
                 else   
                     sistema.mostrar_info_animal(index_animal);
+                break;
+            
         }       
     }
 }
