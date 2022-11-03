@@ -1,7 +1,6 @@
 #include "lagartija.h"
 
 Lagartija::Lagartija(string nombre, int edad, string tamanio, string especie, Personalidad *personalidad) : Animal(nombre, edad, tamanio, especie, personalidad){
-    this->tamanio = tamanio;
     this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene);
 }
 
