@@ -4,9 +4,6 @@
 
 class Roedor : public Animal
 {
-    private:
-        int tamanio;
-
     public:
         //Pre: Recibe el nombre, edad, especie, tamanio y el modificador personalidad
         //Post: Crea un objeto Roedor perteneciente a la clase "Madre" Animal.
