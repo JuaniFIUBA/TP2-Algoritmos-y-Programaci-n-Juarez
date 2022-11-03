@@ -1,5 +1,5 @@
 #include "menu.h"
-#include "menu2.h"//fijarse si esta bien
+#include "menu2.h"
 #include <iostream>
 #include <string>
 
