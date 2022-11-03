@@ -44,7 +44,7 @@ void Sistema::mostrar_info_animal(int pos)
 }
 
 void Sistema::imprimir_lista(){
-    int largo = lista.mostrar_cantidad() - 1; //el - 1 es porque lista siemrpe tiene 1 elemento menos que su cantidad
+    int largo = lista.mostrar_cantidad(); //el - 1 es porque lista siemrpe tiene 1 elemento menos que su cantidad
     for(int i = 0; i < largo; i++)
         mostrar_info_animal(i);    
 }

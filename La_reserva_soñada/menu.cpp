@@ -143,15 +143,13 @@ void Menu::seleccionar_opcion()
     }
     
 }
-        }       
-    }
-}
 
 
 void Menu::rescatar_animal()
 {
     bool reiniciar_solicitud = true;
     string input_usuario;
+
 
     while(reiniciar_solicitud)
     {

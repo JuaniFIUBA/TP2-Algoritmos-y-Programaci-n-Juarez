@@ -10,10 +10,11 @@ class Menu
         //pre:
         //pos: muestra el menu en consola
         void mostrar_menu();
-    private:
         //pre: 
-        //pos: sobreescrive el .csv con los nuevos animales
+        //pos: pide al usuario que seleccione una opción
         void seleccionar_opcion();
+    private:
+
         //pre: 
         //pos: devuelve true en caso de que el dato esté en el array de datos
         template <typename T> 
