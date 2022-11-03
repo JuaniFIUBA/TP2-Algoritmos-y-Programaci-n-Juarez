@@ -86,7 +86,7 @@ void Sistema::definir_personalidad(std::string n_personalidad,int posicion, std:
     if(n_personalidad == "dormilon"){
         Personalidad* personalidad = new Dormilon();
         Animal* animal = obtener_especie(n_nombre,n_edad,n_especie,n_tamanio,personalidad);
-        animal->personalidad = personalidad;
+        animal->personalidad-> = personalidad;
         this->lista.agregar(animal,posicion);
     }
     if(n_personalidad == "jugueton"){
