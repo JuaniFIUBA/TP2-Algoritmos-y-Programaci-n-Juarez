@@ -94,7 +94,7 @@ T Lista<T>::consulta(int pos)
     // if(pos == cantidad_elementos)
     //     return 0;
     // else
-    return aux -> obtener_dato();    
+    return aux -> obtener_dato();  
     
 }
 

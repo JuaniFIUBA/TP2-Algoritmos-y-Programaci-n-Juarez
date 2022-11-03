@@ -139,7 +139,7 @@ void Sistema::adoptar_animal()
     int espacio_disponible;
     cout<<"Indicar el espacio disponible en metros cuadrados:"<<endl;
     cin>>espacio_disponible;
-    for(int i = 0; i < obtener_lista().mostrar_cantidad(); i++){
+    for(int i = 0; i < lista.mostrar_cantidad(); i++){
         if (espacio_disponible >= GIGANTE){
             mostrar_info_animal(i);
         }
