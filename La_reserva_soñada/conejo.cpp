@@ -1,8 +1,7 @@
 #include "conejo.h"
 
 Conejo::Conejo(string nombre, int edad, string tamanio, char especie,  Personalidad *personalidad) : Animal(nombre, edad, tamanio, especie, personalidad){
-    this->tamanio = tamanio;
-    this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene)
+    this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene);
 }
 
 void Conejo::lavarse(){

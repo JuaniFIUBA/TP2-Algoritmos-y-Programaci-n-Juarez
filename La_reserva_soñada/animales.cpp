@@ -5,7 +5,7 @@ Animal::Animal(string nombre , int edad, string tamanio, char especie, Personali
     this->nombre = nombre;
     this->edad = edad;
     this->tamanio = tamanio;
-    this->especie = especie;
+    this->especie[0] = especie;
     this->personalidad = personalidad;
     this->hambre = 0;
     this->higiene = 100;
