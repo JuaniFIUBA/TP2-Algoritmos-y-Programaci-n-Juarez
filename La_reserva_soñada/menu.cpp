@@ -143,6 +143,7 @@ void Menu::seleccionar_opcion()
                 sistema.cerrar_archivo();
                 break;
         }       
+        sistema.actualizar_atributos();
     }
     
 }

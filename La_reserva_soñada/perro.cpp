@@ -4,6 +4,10 @@ Perro::Perro(string nombre, int edad, string tamanio, char especie, Personalidad
     this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene);
 }
 
+string Perro::devolver_especie(){
+    return especie_t;
+}
+
 void Perro::lavarse(){
     cout<<""<<Animal::obtener_nombre()<<", se ha bañado"<<endl;
     higiene = 100;

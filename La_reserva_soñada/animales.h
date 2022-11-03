@@ -59,6 +59,10 @@ class Animal
         //Post: Devuelve el tamanio del animal.
         string obtener_tamanio();
 
+        //Pre:- 
+        //Post: Devuelve la especie del animal completa
+        virtual string devolver_especie(){} 
+
         //Pre:-
         //Post: Cuando el usuario interactue con el menu, la higiene y hambre de los animales cambiara con el tiempo.
         virtual void pasar_tiempo(){}

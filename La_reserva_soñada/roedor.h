@@ -4,6 +4,9 @@
 
 class Roedor : public Animal
 {
+    private:
+        string especie_t = "Roedor";
+
     public:
         //Pre: Recibe el nombre, edad, especie, tamanio y el modificador personalidad
         //Post: Crea un objeto Roedor perteneciente a la clase "Madre" Animal.
@@ -11,6 +14,10 @@ class Roedor : public Animal
         //Leandro.A.Peñaloza
 
         Roedor(string nombre, int edad, string tamanio, char especie, Personalidad *personalidad);
+
+        //Pre: -
+        //Post: Muestra la especie
+        string devolver_especie();
 
         //Pre:-
         //Post: Los roedores no necesitan bañarse, informa al usuario de esto.

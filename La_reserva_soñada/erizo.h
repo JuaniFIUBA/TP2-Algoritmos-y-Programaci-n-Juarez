@@ -4,11 +4,17 @@
 
 class Erizo : public Animal
 {
+    private:
+        string especie_t = "Erizo";      
     public:
         //Pre: Recibe el nombre, edad, especie, tamanio y el modificador personalidad
         //Post: Crea un objeto Erizo perteneciente a la clase "Madre" Animal.
         //Leandro.A.Peñaloza
         Erizo(string nombre, int edad, string tamanio, char especie, Personalidad *personalidad);
+
+        //Pre: -
+        //Post: Muestra la especie
+        string devolver_especie();   
 
         //Pre:-
         //Post: Se baña al Erizo, aumentando su higiene a 100.

@@ -4,6 +4,10 @@ Lagartija::Lagartija(string nombre, int edad, string tamanio, char especie, Pers
     this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene);
 }
 
+string Lagartija::devolver_especie(){
+    return especie_t;
+}
+
 void Lagartija::lavarse(){
     cout<<"La "<<especie<<" no quiere bañarse, las "<<especie<<"s no necesitan bañarse"<<endl;
 }

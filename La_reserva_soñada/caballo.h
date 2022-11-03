@@ -4,11 +4,16 @@
 
 class Caballo : public Animal
 {
+        private:
+        string especie_t = "Caballo";
         public:
         //Pre: Recibe el nombre, edad, especie, tamanio y el modificador personalidad
         //Post: Crea un objeto Caballo perteneciente a la clase "Madre" Animal.
-
         Caballo(string nombre, int edad, string tamanio, char especie, Personalidad *personalidad);
+
+        //Pre: -
+        //Post: Muestra la especie
+        string devolver_especie();   
 
         //Pre:-
         //Post: Se baña al Caballo, aumentando su higiene a 100.

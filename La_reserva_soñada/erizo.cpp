@@ -4,6 +4,10 @@ Erizo::Erizo(string nombre, int edad, string tamanio, char especie, Personalidad
     this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene);
 }
 
+string Erizo::devolver_especie(){
+    return especie_t;
+}
+
 void Erizo::lavarse(){
     cout<<""<<Animal::obtener_nombre()<<", se ha bañado"<<endl;
     higiene = 100;

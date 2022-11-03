@@ -4,6 +4,10 @@ Roedor::Roedor(string nombre, int edad, string tamanio, char especie, Personalid
     this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene);
 }
 
+string Roedor::devolver_especie(){
+    return especie_t;
+}
+
 void Roedor::lavarse(){
     cout<<"El "<<especie<<" se rehuso a bañarse, los "<<especie<<"s no necesitan bañarse"<<endl;
 }

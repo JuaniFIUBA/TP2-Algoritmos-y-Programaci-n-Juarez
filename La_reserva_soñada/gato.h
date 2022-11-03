@@ -4,10 +4,16 @@
 
 class Gato : public Animal
 {
+    private:
+        string especie_t = "Gato";
     public:
         //Pre: Recibe el nombre, edad, especie, tamanio y el modificador personalidad
         //Post: Crea un objeto Gato perteneciente a la clase "Madre" Animal.
         Gato(string nombre, int edad, string tamanio, char especie, Personalidad *personalidad);
+
+        //Pre: -
+        //Post: Muestra la especie
+        string devolver_especie();   
 
         //Pre:-
         //Post: Los gatos no necesitan bañarse, informa al usuario de esto.

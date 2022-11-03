@@ -4,6 +4,10 @@ Conejo::Conejo(string nombre, int edad, string tamanio, char especie,  Personali
     this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene);
 }
 
+string Conejo::devolver_especie(){
+    return especie_t;
+}
+
 void Conejo::lavarse(){
     cout<<""<<Animal::obtener_nombre()<<", se ha bañado"<<endl;
     higiene = 100;
