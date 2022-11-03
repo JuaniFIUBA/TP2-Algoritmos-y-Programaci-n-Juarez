@@ -109,7 +109,7 @@ bool Menu::solicitar_datos()
     if(!solicitar_especie(especie))
         return false;
     cout << "Ingrese la edad:" << endl;
-    cin >> edad;
+    cin >> edad;//falta verificacion
     sistema.agregar_animal(personalidad, nombre, edad, tamanio, especie);
     return true;
 }
@@ -123,7 +123,8 @@ void Menu::seleccionar_opcion()
     while(opcion_elegida != GUARDAR_Y_SALIR)
     {        
         mostrar_menu();
-        cin >> opcion_elegida;
+        cin >> opcion_elegida;//falta verificar opcion elegida
+        validar_opcion(opcion_elegida);
         switch(opcion_elegida)
         {
             case 1:
@@ -147,6 +148,15 @@ void Menu::seleccionar_opcion()
     
 }
 
+void Menu::validar_opcion(int &opcion)
+{
+    bool es_opcion_valida = opcion > 0 && opcion <= GUARDAR_Y_SALIR;
+    while(!es_opcion_valida){
+        cout<<"La opción ingresada es inválida. Por favor ingrese otra opción: ";
+        cin>>opcion;
+        es_opcion_valida = opcion > 0 && opcion <= GUARDAR_Y_SALIR;
+    }
+}
 
 void Menu::rescatar_animal()
 {
@@ -182,3 +192,9 @@ void Menu::buscar_animal()
         sistema.mostrar_info_animal(index_animal);
 }
 
+void Menu::adoptar_animal()
+{
+    int espacio_disponible;
+    cin>>espacio_disponible;
+    
+}

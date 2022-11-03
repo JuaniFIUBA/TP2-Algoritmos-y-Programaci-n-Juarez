@@ -13,8 +13,19 @@ class Menu
         //pre: 
         //pos: pide al usuario que seleccione una opción
         void seleccionar_opcion();
-    private:
-
+        //pre:
+        //pos: agrega un animal al registro 
+        void rescatar_animal();
+        //pre:
+        //pos: busca e imprime las características del animal ingresado por el usuario (busca por nombre)
+        void buscar_animal();
+        //pre: 
+        //pos:
+        void adoptar_animal();
+    private:  
+        //Pre: Debe recibir un entero.
+        //Post: En caso de no ser válida la opción, le pide al usuario que la ingrese nuevamente.
+        void validar_opcion (int &opcion);
         //pre: 
         //pos: devuelve true en caso de que el dato esté en el array de datos
         template <typename T> 
@@ -34,12 +45,7 @@ class Menu
         //pre: 
         //pos: devuelve el string en minuscula (no devuelve Ñ en minúsculas)
         void a_minuscula(string &cadena);
-        //pre:
-        //pos: agrega un animal al registro 
-        void rescatar_animal();
-        //pre:
-        //pos: busca e imprime las características del animal ingresado por el usuario (busca por nombre)
-        void buscar_animal();
+
 
 
 };

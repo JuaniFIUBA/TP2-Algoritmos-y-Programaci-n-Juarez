@@ -127,6 +127,8 @@ void Sistema::agregar_animal(std::string personalidad, std::string nombre, int e
     definir_personalidad(personalidad, lista.mostrar_cantidad(), nombre, edad, tamanio ,especie);
 }
 
+
+
 void Sistema::cerrar_archivo(){
     
     ofstream lista_animales ("animales.csv");
