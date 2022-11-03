@@ -195,6 +195,7 @@ void Menu::buscar_animal()
 void Menu::adoptar_animal()
 {
     int espacio_disponible;
+    cout<<"Indicar el espacio disponible en metros cuadrados:"<<endl;
     cin>>espacio_disponible;
     
 }
