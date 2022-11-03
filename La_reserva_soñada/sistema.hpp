@@ -26,6 +26,9 @@ public:
     //pre: el archivo está en formato csv correcto (ordenado) 
     //pos: crea una lista de <Animal*>
     void leer_archivo();
+    //pre: -
+    //pos:  Devuelva la lista.
+    Lista<Animal*> obtener_lista();
     //pre: 
     //pos: muestra por pantalla los datos de los animales registrados
     void imprimir_lista();

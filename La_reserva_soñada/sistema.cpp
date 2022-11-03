@@ -33,6 +33,10 @@ void Sistema::leer_archivo(){
     lista_animales.close();
 }
 
+Lista<Animal*> Sistema::obtener_lista(){
+    return lista;
+}
+
 void Sistema::mostrar_info_animal(int pos)
 {
     std::cout << "-----------------ANIMAL"<< pos+1<<"-----------------" << endl;
