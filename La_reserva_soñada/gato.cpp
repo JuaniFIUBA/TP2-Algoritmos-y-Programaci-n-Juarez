@@ -4,6 +4,10 @@ Gato::Gato(string nombre, int edad, string tamanio, char especie, Personalidad *
     this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene);
 }
 
+string Gato::devolver_especie(){
+    return especie_t;
+}
+
 void Gato::lavarse(){
     cout<<"El "<<especie<<" se rehuso a bañarse, los "<<especie<<"s no necesitan bañarse"<<endl;
 }

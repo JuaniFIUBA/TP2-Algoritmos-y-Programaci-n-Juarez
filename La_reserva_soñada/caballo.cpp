@@ -4,6 +4,10 @@ Caballo::Caballo(string nombre, int edad, string tamanio, char especie, Personal
     this->personalidad->modificar_bases(crecimiento_hambre, decrecimiento_higiene);
 }
 
+string Caballo::devolver_especie(){
+    return especie_t;
+}
+
 void Caballo::lavarse(){
     cout<<"El "<<especie<<" se ha bañado"<<endl;
     higiene = 100;
