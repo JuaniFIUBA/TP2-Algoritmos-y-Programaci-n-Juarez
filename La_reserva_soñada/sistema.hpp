@@ -28,6 +28,7 @@ public:
     void mostrar_info_animal(int pos);
     int esta_en_lista(string nombre);
     void agregar_animal(std::string personalidad, std::string nombre, int edad, std::string tamanio, char especie);
+    void cerrar_archivo();
     ~Sistema();
 
 private:
