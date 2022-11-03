@@ -42,7 +42,7 @@ Nodo<T>::Nodo(T dato){
 }
 
 
-//Cambiar siguiente nodo
+//Cambiar siguiente nodo    
 template <class T>
 void Nodo<T>::nodo_siguiente(Nodo<T>* n){
     siguiente = n;

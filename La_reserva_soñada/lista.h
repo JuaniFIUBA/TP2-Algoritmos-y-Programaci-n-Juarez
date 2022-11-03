@@ -66,6 +66,8 @@ void Lista<T>::agregar(T dato, int pos)
     cantidad_elementos++;
 }
 
+
+
 template <class T>
 void Lista<T>::borrar(int pos)
 {
@@ -89,10 +91,10 @@ T Lista<T>::consulta(int pos)
 {
     Nodo<T>* aux = buscar_nodo(pos);
 
-    if(pos == cantidad_elementos)
-        return 0;
-    else
-        return aux -> obtener_dato();    
+    // if(pos == cantidad_elementos)
+    //     return 0;
+    // else
+    return aux -> obtener_dato();    
     
 }
 

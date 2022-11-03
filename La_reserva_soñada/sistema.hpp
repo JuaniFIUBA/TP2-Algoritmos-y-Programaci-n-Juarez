@@ -24,7 +24,7 @@ private:
 public:
     Sistema();
     //pre: el archivo está en formato csv correcto (ordenado) 
-    //pos: crea una lista de <Aninimal*>
+    //pos: crea una lista de <Animal*>
     void leer_archivo();
     //pre: 
     //pos: muestra por pantalla los datos de los animales registrados
