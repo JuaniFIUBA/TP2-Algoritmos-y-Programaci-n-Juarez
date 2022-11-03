@@ -9,12 +9,12 @@ string Caballo::devolver_especie(){
 }
 
 void Caballo::lavarse(){
-    cout<<"El "<<especie<<" se ha bañado"<<endl;
+    cout<<"El "<<especie_t<<" se ha bañado"<<endl;
     higiene = 100;
 }
 
 void Caballo::alimentarse(){
-    cout<<"Alimentaste al "<<especie<<" con manzanas"<<endl;
+    cout<<"Alimentaste al "<<especie_t<<", "<<Animal::obtener_nombre()<<" con manzanas"<<endl;
     hambre = 0;
 }
 

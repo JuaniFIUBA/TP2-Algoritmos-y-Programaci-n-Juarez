@@ -9,11 +9,11 @@ string Gato::devolver_especie(){
 }
 
 void Gato::lavarse(){
-    cout<<"El "<<especie<<" se rehuso a bañarse, los "<<especie<<"s no necesitan bañarse"<<endl;
+    cout<<"El "<<especie_t<<" se rehuso a bañarse, los "<<especie_t<<"s no necesitan bañarse"<<endl;
 }
 
 void Gato::alimentarse(){
-    cout<<"Alimentaste al "<<especie<<" con atun "<<endl;
+    cout<<"Alimentaste al "<<especie_t<<", "<<Animal::obtener_nombre()<<" con atun "<<endl;
     hambre = 0;
 }
 

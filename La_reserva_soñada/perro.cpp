@@ -14,7 +14,7 @@ void Perro::lavarse(){
 }
 
 void Perro::alimentarse(){
-    cout<<"Alimentaste al "<<especie<<", "<<Animal::obtener_nombre()<<" con huesos "<<endl;
+    cout<<"Alimentaste al "<<especie_t<<", "<<Animal::obtener_nombre()<<" con huesos "<<endl;
     hambre = 0;
 
 }
@@ -25,5 +25,5 @@ void Perro::pasar_tiempo(){
 }
 
 Perro::~Perro(){
-    delete personalidad;
+    //delete personalidad;
 }

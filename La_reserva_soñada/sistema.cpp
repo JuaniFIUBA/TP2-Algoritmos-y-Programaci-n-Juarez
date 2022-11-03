@@ -215,12 +215,19 @@ void Sistema::cerrar_archivo(){
     ofstream lista_animales ("animales.csv");
     int cantidad_elementos = lista.mostrar_cantidad();
     for(int i = 0; i < cantidad_elementos; i++){
-        lista_animales << lista.consulta(i)->obtener_nombre() << ',' 
-                       << lista.consulta(i)->obtener_edad() << ',' 
-                       << lista.consulta(i)->obtener_tamanio() << ',' 
-                       << lista.consulta(i)->obtener_especie() << ',' 
-                       << lista.consulta(i)->mostrar_personalidad() << '\n';
-        
+        if(i < cantidad_elementos - 1){
+            lista_animales << lista.consulta(i)->obtener_nombre() << ',' 
+                        << lista.consulta(i)->obtener_edad() << ',' 
+                        << lista.consulta(i)->obtener_tamanio() << ',' 
+                        << lista.consulta(i)->devolver_especie() << ',' 
+                        << lista.consulta(i)->mostrar_personalidad() << '\n';
+        }else{
+            lista_animales << lista.consulta(i)->obtener_nombre() << ',' 
+                        << lista.consulta(i)->obtener_edad() << ',' 
+                        << lista.consulta(i)->obtener_tamanio() << ',' 
+                        << lista.consulta(i)->devolver_especie() << ',' 
+                        << lista.consulta(i)->mostrar_personalidad();
+        }
         
     }   
     
@@ -231,14 +238,16 @@ void Sistema::elegir_individualmente(){
     int opcion = 0;
     while(!escogido && i < lista.mostrar_cantidad()){
         mostrar_info_animal(i);
+        cout<<"\t\t=========================="<<endl;
         cout<<"\t Por favor eliga una de las siguientes opciones\n";
         cout<<"1.Alimentar\n";
         cout<<"2.Baniar\n";
         cout<<"3.Saltear al siguiente\n";
+        cout<<"\t\t=========================="<<endl;
+        cout<<"Ingrese una opcion: ";
         cin>>opcion; //Falta validación
-        break;
         if(opcion == 1){
-            baniar(i);
+            alimentar(i);
             escogido = true;
         }
         else if(opcion == 2){

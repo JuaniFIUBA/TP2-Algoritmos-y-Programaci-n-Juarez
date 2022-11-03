@@ -9,11 +9,11 @@ string Lagartija::devolver_especie(){
 }
 
 void Lagartija::lavarse(){
-    cout<<"La "<<especie<<" no quiere bañarse, las "<<especie<<"s no necesitan bañarse"<<endl;
+    cout<<"La "<<especie_t<<" no quiere bañarse, las "<<especie_t<<"s no necesitan bañarse"<<endl;
 }
 
 void Lagartija::alimentarse(){
-    cout<<"Alimentaste al "<<especie<<" con insectos "<<endl;
+    cout<<"Alimentaste al "<<especie_t<<", "<<Animal::obtener_nombre()<<" con insectos "<<endl;
     hambre = 0;
 }
 
