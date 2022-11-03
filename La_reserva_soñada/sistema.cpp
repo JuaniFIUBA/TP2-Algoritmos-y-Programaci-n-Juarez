@@ -35,7 +35,7 @@ void Sistema::leer_archivo(){
 
 void Sistema::mostrar_info_animal(int pos)
 {
-    std::cout << "-----------------ANIMAL"<< pos<<"-----------------" << endl;
+    std::cout << "-----------------ANIMAL"<< pos+1<<"-----------------" << endl;
     std::cout << "nombre: " << lista.consulta(pos)->obtener_nombre() << endl;
     std::cout << "edad: " << lista.consulta(pos)->obtener_edad() << endl;
     std::cout << "tamaño: " << lista.consulta(pos)->obtener_tamanio() << endl;
@@ -45,7 +45,7 @@ void Sistema::mostrar_info_animal(int pos)
 }
 
 void Sistema::imprimir_lista(){
-    int largo = lista.mostrar_cantidad(); //el - 1 es porque lista siemrpe tiene 1 elemento menos que su cantidad
+    int largo = lista.mostrar_cantidad();
     for(int i = 0; i < largo; i++)
     {
         mostrar_info_animal(i);
