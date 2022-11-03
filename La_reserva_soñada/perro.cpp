@@ -25,5 +25,5 @@ void Perro::pasar_tiempo(){
 }
 
 Perro::~Perro(){
-    //delete personalidad;
+    delete personalidad;
 }
