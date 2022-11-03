@@ -8,7 +8,11 @@ const char CABALLO = 'C';
 const char ROEDOR = 'R';
 const char CONEJO = 'O';
 const char ERIZO = 'E';
-
+const int DIMINUTO = 2;
+const int PEQUENIO = 10;
+const int MEDIANO = 10;
+const int GRANDE = 20;
+const int GIGANTE = 50;
 
 Sistema::Sistema(){
     leer_archivo();
@@ -33,7 +37,7 @@ void Sistema::leer_archivo(){
     lista_animales.close();
 }
 
-Lista<Animal*> Sistema::obtener_lista(){
+Lista<Animal *> Sistema::obtener_lista(){
     return lista;
 }
 
@@ -130,7 +134,37 @@ void Sistema::agregar_animal(std::string personalidad, std::string nombre, int e
     definir_personalidad(personalidad, lista.mostrar_cantidad(), nombre, edad, tamanio ,especie);
 }
 
-
+void Sistema::adoptar_animal()
+{
+    int espacio_disponible;
+    cout<<"Indicar el espacio disponible en metros cuadrados:"<<endl;
+    cin>>espacio_disponible;
+    for(int i = 0; i < obtener_lista().mostrar_cantidad(); i++){
+        if (espacio_disponible >= GIGANTE){
+            mostrar_info_animal(i);
+        }
+        else if(espacio_disponible >= GRANDE){
+            if(lista.consulta(i)->obtener_tamanio() != "gigante"){
+                mostrar_info_animal(i); 
+            }
+        }
+        else if(espacio_disponible >= MEDIANO){
+            if (lista.consulta(i)->obtener_tamanio() != "gigante" && lista.consulta(i)->obtener_tamanio() != "grande"){
+                mostrar_info_animal(i);
+            }
+        }
+        else if(espacio_disponible < PEQUENIO){
+            if (lista.consulta(i)->obtener_tamanio() == "pequeño" || lista.consulta(i)->obtener_tamanio() == "diminuto"){
+                mostrar_info_animal(i);
+            }
+        }
+        else if(espacio_disponible < DIMINUTO){
+            if(lista.consulta(i)->obtener_tamanio() == "diminuto"){
+                mostrar_info_animal(i); 
+            }
+        }
+    }
+}
 
 void Sistema::cerrar_archivo(){
     

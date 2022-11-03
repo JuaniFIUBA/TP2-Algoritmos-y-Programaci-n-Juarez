@@ -146,10 +146,10 @@ void Menu::seleccionar_opcion()
             case 5:
                 sistema.adoptar_animal();
                 break;
-            /*
+            
             case 6:
                 sistema.cerrar_archivo();
-                break;*/
+                break;
         }       
     }
     
