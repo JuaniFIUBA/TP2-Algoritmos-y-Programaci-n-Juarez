@@ -196,9 +196,10 @@ void Sistema::cerrar_archivo(){
                        << lista.consulta(i)->obtener_especie() << ',' 
                        << lista.consulta(i)->mostrar_personalidad() << '\n';
         
-        lista.borrar(i);
+        
     }   
-    lista.~Lista();
+    //lista.~Lista();
+    
 }
 
 Sistema::~Sistema(){
