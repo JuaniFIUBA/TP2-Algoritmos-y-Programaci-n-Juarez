@@ -26,8 +26,8 @@ void Sistema::leer_archivo(){
         getline(lista_animales, tamanio,',');
         getline(lista_animales, especie,',');
         getline(lista_animales, personalidad);
-        i++;
         definir_personalidad(personalidad, i, nombre, stoi(edad), tamanio, especie[0]);
+        i++;
         cout<<nombre<<endl;
     }
     lista_animales.close();
@@ -47,7 +47,7 @@ void Sistema::mostrar_info_animal(int pos)
 void Sistema::imprimir_lista(){
     int largo = lista.mostrar_cantidad(); //el - 1 es porque lista siemrpe tiene 1 elemento menos que su cantidad
     for(int i = 0; i < largo; i++)
-<<<<<<< HEAD
+
     {
         cout<<"==============ANIMAL============"<< i+1<<endl;
         cout<<lista.consulta(i)->obtener_nombre()<<endl;
@@ -57,9 +57,9 @@ void Sistema::imprimir_lista(){
         cout<<lista.consulta(i)->mostrar_personalidad()<<endl;
         cout<<endl;
     }
-=======
+
         mostrar_info_animal(i);    
->>>>>>> 49e5b4749f37cbbb995e9c069fb6965db86e19c4
+
 }
 
 Animal* Sistema::obtener_especie(std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie, Personalidad* personalidad){
