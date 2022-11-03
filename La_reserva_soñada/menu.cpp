@@ -1,14 +1,16 @@
 #include "menu.h"
-#include "menu2.h"
+#include "menu2.h"//fijarse si esta bien
 #include <iostream>
 #include <string>
 
 const int CANTIDAD_PERSONALIDADES = 4;
 const int CANTIDAD_TAMANIOS =  5;
 const int CANTIDAD_ESPECIES = 7;
-const string TAMANIOS[] = {"diminuto", "pequenio", "mediano", "grande", "gigante"};
+const string TAMANIOS[] = {"diminuto", "pequeño", "mediano", "grande", "gigante"};
 const string PERSONALIDADES[] = {"jugueton", "travieso", "sociable", "dormilon"};
 const char ESPECIES[] = {'P', 'G', 'C', 'R', 'O', 'E', 'L'};
+
+
 
 enum opciones_menu{
     LISTAR_ANIMALES = 1,
@@ -66,7 +68,7 @@ bool Menu::solicitar_personalidad(string &personalidad)
 }
 bool Menu::solicitar_tamanio(string &tamanio)
 {
-    cout << "Ingrese un tamanio (en minúsculas): (diminuto, pequenio, mediano, grande o gigante)" << endl;
+    cout << "Ingrese un tamanio (en minúsculas): (diminuto, pequeño, mediano, grande o gigante)" << endl;
     getline(cin, tamanio);
     a_minuscula(tamanio);
     if(!verificar_dato<string>(tamanio, (string*)TAMANIOS, CANTIDAD_TAMANIOS))
@@ -141,8 +143,10 @@ void Menu::seleccionar_opcion()
             case 4:
                 cuidar_animal();
                 break;
-            /*case 5:
+            case 5:
+                sistema.adoptar_animal();
                 break;
+            /*
             case 6:
                 sistema.cerrar_archivo();
                 break;*/
@@ -201,10 +205,3 @@ void Menu::cuidar_animal()
 
 }
 
-void Menu::adoptar_animal()
-{
-    int espacio_disponible;
-    cout<<"Indicar el espacio disponible en metros cuadrados:"<<endl;
-    cin>>espacio_disponible;
-    
-}

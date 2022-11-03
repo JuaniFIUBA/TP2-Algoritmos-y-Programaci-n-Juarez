@@ -1,10 +1,16 @@
 #include "menu2.h"
+#include "sistema.hpp"
 
 void Menu2::mostrar_menu2(){
+    
     int opcion_elegida = 0;
     while(opcion_elegida != -1)
     {        
-        cout<<"INGRESE";
+        cout<<"1. Elegir individualmente"<<endl;
+        cout<<"2. Alimentar a todos"<<endl;
+        cout<<"3. Baniar a todos"<<endl;
+        cout<<"4. Regresar al inicio"<<endl;
+        cout<<"Ingrese una opción: ";
         cin >> opcion_elegida;//falta verificar opcion elegida
         //validar_opcion(opcion_elegida);
         switch(opcion_elegida)
@@ -29,6 +35,7 @@ void Menu2::elegir_individualmente(){
     bool escogido = false;
     int i = 0;
     int opcion = 0;
+    
 
     while(!escogido && i < sistema.obtener_lista().mostrar_cantidad()){
         sistema.mostrar_info_animal(i);

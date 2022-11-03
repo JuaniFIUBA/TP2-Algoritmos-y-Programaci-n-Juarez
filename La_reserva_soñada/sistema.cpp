@@ -28,7 +28,7 @@ void Sistema::leer_archivo(){
         getline(lista_animales, personalidad);
         definir_personalidad(personalidad, i, nombre, stoi(edad), tamanio, especie[0]);
         i++;
-        cout<<nombre<<endl;
+        cout<<"nombre"<<endl;
     }
     lista_animales.close();
 }
