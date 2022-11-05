@@ -6,6 +6,7 @@ class Perro : public Animal
 {
     private:
         string especie_t = "Perro";
+    
     public:
         //Pre: Recibe el nombre, edad, especie, tamanio y el modificador personalidad
         //Post: Crea un objeto Perro perteneciente a la clase "Madre" Animal.

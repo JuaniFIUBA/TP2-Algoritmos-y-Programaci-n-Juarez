@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Personalidad
+class Personalidad  //Es un decoradaor de la clase animal
 {
     public:
         //Pre:-
@@ -19,6 +19,6 @@ class Personalidad
         //Pre:-
         //Post: Destruye al objeto Personalidad.
         virtual ~Personalidad(){}
-}; //Es un decoradaor de la clase animal
+};
 
 #endif

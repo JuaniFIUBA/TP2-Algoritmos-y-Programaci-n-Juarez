@@ -13,12 +13,10 @@ class Dormilon : public Personalidad
     public:
         //Pre:-
         //Post: Crea el objeto Dormilon
-        //Leandro.A.Peñaloza
         Dormilon();
 
         //Pre:-
         //Post: Muestra la personalidad.
-        //Leandro.A.Peñaloza
         string mostrar_personalidad();
 
         //Pre:-

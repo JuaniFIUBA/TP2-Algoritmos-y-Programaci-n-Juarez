@@ -6,7 +6,6 @@ class Travieso : public Personalidad
 {
     private:
         string personalidad = "Travieso";
-        
         float estadistica_hambre = 1; //Velocidad con la que crece el hambre
         float estadistica_higiene = 2; //Velocidad con la que decrece la higiene
 

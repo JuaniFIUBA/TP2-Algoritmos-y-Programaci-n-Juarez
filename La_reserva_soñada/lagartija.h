@@ -6,6 +6,7 @@ class Lagartija : public Animal
 {
     private:
         string especie_t = "Lagartija";
+    
     public:
         //Pre: Recibe el nombre, edad, especie, tamanio y el modificador personalidad
         //Post: Crea un objeto Lagartija perteneciente a la clase "Madre" Animal.
@@ -17,7 +18,6 @@ class Lagartija : public Animal
 
         //Pre:-
         //Post: Las lagartijas no necesitan bañarse, informa al usuario de esto.
-        //Leandro.A.Peñaloza
         void lavarse();
 
         //Pre:-

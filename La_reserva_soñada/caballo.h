@@ -4,9 +4,10 @@
 
 class Caballo : public Animal
 {
-        private:
+    private:
         string especie_t = "Caballo";
-        public:
+    
+    public:
         //Pre: Recibe el nombre, edad, especie, tamanio y el modificador personalidad
         //Post: Crea un objeto Caballo perteneciente a la clase "Madre" Animal.
         Caballo(string nombre, int edad, string tamanio, char especie, Personalidad *personalidad);

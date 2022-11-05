@@ -17,17 +17,14 @@ class Nodo
     //POS: Contruye un Nodo con "dato" como dato. Siguiente en nullptr
     Nodo(T dato);
 
-    //Cambiar siguiente nodo
     //PRE: -
     //POS: Cambia el puntero siguiente del nodo a "n"
     void nodo_siguiente(Nodo<T>* n);
 
-    //Obtener dato del nodo
     //PRE: -
     //POS: retorna el dato almacenado en el nodo
     T obtener_dato();
 
-    //Obtener siguiente del nodo
     //PRE: -
     //POS: retorna el puntero siguiente del nodo
     Nodo<T>* obtener_siguiente();

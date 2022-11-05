@@ -9,7 +9,6 @@ const int decrecimiento_higiene = 10;
 class Animal
 {
     private:
-
         string nombre;
         int edad;
         string personalidad_t;
@@ -17,13 +16,10 @@ class Animal
 
     protected:
         char especie;
-
         float hambre;
         float higiene;
-
         float crecimiento_hambre = 10; //Cuanto aumenta el hambre al pasar el tiempo
         float decrecimiento_higiene = 10; //Cuanto decrece la higiene al pasar el tiempo
-        
         Personalidad *personalidad; //Es un decorador/modificador, que cambia o modifica algunas acciones del animal.    
 
     public:

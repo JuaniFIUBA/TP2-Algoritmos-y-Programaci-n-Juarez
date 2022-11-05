@@ -13,12 +13,10 @@ class Jugueton : public Personalidad
     public:
         //Pre:-
         //Post: Construye al objeto Jugueton.
-        //Leandro.A.Peñaloza
         Jugueton();
 
         //Pre:-
         //Post: Muestra la personalidad.
-        //Leandro.A.Peñaloza
         string mostrar_personalidad();
 
         //Pre:-
