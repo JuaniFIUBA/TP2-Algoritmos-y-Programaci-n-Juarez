@@ -1,4 +1,5 @@
 #include "animales.h"
+#include <string>
 
 Animal::Animal(string nombre , int edad, string tamanio, char especie, Personalidad *personalidad)
 {

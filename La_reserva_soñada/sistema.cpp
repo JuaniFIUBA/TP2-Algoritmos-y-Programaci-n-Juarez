@@ -213,29 +213,6 @@ void Sistema::seleccionar_animal(){
     }   
 }
 
-
-void Sistema::cerrar_archivo(){
-    
-    ofstream lista_animales ("animales.csv");
-    int cantidad_elementos = lista.mostrar_cantidad();
-    for(int i = 0; i < cantidad_elementos; i++){
-        if(i < cantidad_elementos - 1){
-            lista_animales << lista.consulta(i)->obtener_nombre() << ',' 
-                        << lista.consulta(i)->obtener_edad() << ',' 
-                        << lista.consulta(i)->obtener_tamanio() << ',' 
-                        << lista.consulta(i)->devolver_especie() << ',' 
-                        << lista.consulta(i)->mostrar_personalidad() << '\n';
-        }else{
-            lista_animales << lista.consulta(i)->obtener_nombre() << ',' 
-                        << lista.consulta(i)->obtener_edad() << ',' 
-                        << lista.consulta(i)->obtener_tamanio() << ',' 
-                        << lista.consulta(i)->devolver_especie() << ',' 
-                        << lista.consulta(i)->mostrar_personalidad();
-        }
-        
-    }   
-    
-}
 void Sistema::elegir_individualmente(){
     bool escogido = false;
     int i = 0;
@@ -285,6 +262,29 @@ void Sistema::actualizar_atributos()
     int largo_lista = lista.mostrar_cantidad();
     for(int i = 0; i < largo_lista; i++)
         lista.consulta(i)->pasar_tiempo();
+}
+
+void Sistema::cerrar_archivo(){
+    
+    ofstream lista_animales ("animales.csv");
+    int cantidad_elementos = lista.mostrar_cantidad();
+    for(int i = 0; i < cantidad_elementos; i++){
+        if(i < cantidad_elementos - 1){
+            lista_animales << lista.consulta(i)->obtener_nombre() << ',' 
+                        << lista.consulta(i)->obtener_edad() << ',' 
+                        << lista.consulta(i)->obtener_tamanio() << ',' 
+                        << lista.consulta(i)->devolver_especie() << ',' 
+                        << lista.consulta(i)->mostrar_personalidad() << '\n';
+        }else{
+            lista_animales << lista.consulta(i)->obtener_nombre() << ',' 
+                        << lista.consulta(i)->obtener_edad() << ',' 
+                        << lista.consulta(i)->obtener_tamanio() << ',' 
+                        << lista.consulta(i)->devolver_especie() << ',' 
+                        << lista.consulta(i)->mostrar_personalidad();
+        }
+        
+    }   
+    
 }
 
 Sistema::~Sistema(){
