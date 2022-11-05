@@ -8,8 +8,10 @@ class Menu
         Sistema sistema;
 
     public:
+        //pre:
+        //pos:
         void mostrar_menu2();
-
+        //pre: -
         //pos: muestra el menu en consola
         void mostrar_menu();
         //pre: 
@@ -21,9 +23,6 @@ class Menu
         //pre:
         //pos: busca e imprime las características del animal ingresado por el usuario (busca por nombre)
         void buscar_animal();
-        //pre:
-        //pos:
-        // void cuidar_animal(); 
         //pre: 
         //pos:
         void adoptar_animal();

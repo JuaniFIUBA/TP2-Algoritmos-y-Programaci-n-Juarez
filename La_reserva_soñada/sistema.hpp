@@ -29,12 +29,23 @@ public:
     //pre: -
     //pos:  Devuelva la lista.
     Lista<Animal*> obtener_lista();
-    
+    //pre:
+    //pos:
     void alimentar(int pos);
+    //pre:
+    //pos:
     void baniar(int pos);
+    //pre:
+    //pos:
     void elegir_individualmente();
+    //pre:
+    //pos:
     void alimentar_todos();
+    //pre:
+    //pos:
     void baniar_todos();
+    //pre:
+    //pos:
     void actualizar_atributos();
     //pre: 
     //pos: muestra por pantalla los datos de los animales registrados
@@ -61,9 +72,17 @@ public:
 
 
 private:
+    //pre:
+    //pos:
     Animal* obtener_especie(std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie, Personalidad *personalidad);
+    //pre:
+    //pos:
     void definir_personalidad(std::string n_personalidad,int posicion, std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie);
+    //pre:
+    //pos:
     void mostrar_animales_disponibles(int espacio_disponible);
+    //pre:
+    //pos:
     void seleccionar_animal();
 };
 
