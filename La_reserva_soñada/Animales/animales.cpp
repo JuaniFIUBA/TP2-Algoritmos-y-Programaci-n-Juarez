@@ -41,6 +41,4 @@ string Animal::obtener_tamanio(){
     return tamanio;
 }
 
-Animal::~Animal(){
-    cout<<""<<nombre<<" fue borrado con exito"<<endl;
-}
+Animal::~Animal(){}

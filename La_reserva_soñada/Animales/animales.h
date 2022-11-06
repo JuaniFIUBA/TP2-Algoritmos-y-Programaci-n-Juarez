@@ -1,7 +1,7 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
 
-#include "personalidad.h"
+#include "./Personalidades/personalidad.h"
 
 const int crecimiento_hambre = 10;
 const int decrecimiento_higiene = 10;

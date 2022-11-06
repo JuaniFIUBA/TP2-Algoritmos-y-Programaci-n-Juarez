@@ -1,6 +1,5 @@
 #include "menu.h"
-#include <iostream>
-#include <string>
+
 
 using namespace std;
 
@@ -27,6 +26,9 @@ void Menu::seleccionar_opcion()
         {
             case 1:
                 sistema.imprimir_lista();
+                cout << "Presione enter para continuar..." << endl;
+                cin.get();
+                cout << "\e[1;1H\e[2J" << endl; // limpia la consola
                 break;
             case 2:    
                 sistema.rescatar_animal();
@@ -39,11 +41,15 @@ void Menu::seleccionar_opcion()
                 break;
             case 5:
                 sistema.adoptar_animal();
+                cout << "Presione enter para continuar..." << endl;
+                cin.get();                
+                cout << "\e[1;1H\e[2J" << endl; // limpia la consola
                 break;
             case 6:
                 sistema.cerrar_archivo();
                 break;
         }       
+
         sistema.actualizar_atributos();
     }
     
@@ -70,9 +76,17 @@ void Menu::mostrar_menu2(){
                 break;
             case 2:    
                 sistema.alimentar_todos();
+                cout << "Presione enter para continuar..." << endl;
+                cin.get();
+                cout << "\e[1;1H\e[2J" << endl; // limpia la consola
                 break;
+
             case 3:
                 sistema.baniar_todos();
+                cout << "Presione enter para continuar..." << endl;
+                cin.get();
+                cout << "\e[1;1H\e[2J" << endl; // limpia la consola
+
                 break;
             case 4:
                 opcion_elegida = REGRESAR;

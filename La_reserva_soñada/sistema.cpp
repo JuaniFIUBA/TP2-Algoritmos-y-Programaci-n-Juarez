@@ -114,11 +114,13 @@ void Sistema::rescatar_animal()
 
     while(reiniciar_solicitud)
     {
+        imprimir_lista();
         if(!solicitar_datos_y_agregar())
         {
             cout << "Desea ingresar nuevamente los datos? S(sí), N(no)." << endl;
             getline(cin>>ws, input_usuario);
             a_minuscula(input_usuario);
+        
             if(input_usuario.find('n') != string::npos)
                 reiniciar_solicitud = false;
         }
@@ -247,19 +249,22 @@ void Sistema::adoptar_animal()
     int espacio_disponible;
     cout<<"Indicar el espacio disponible en metros cuadrados(desde 1 hasta 500 metros cuadrados):"<<endl;
     espacio_disponible = pedir_opcion(ESPACIO_MIN, ESPACIO_MAX) ;
+
     mostrar_animales_disponibles(espacio_disponible);
     
     string input_usuario;
     cout << "¿Desea elegir un animal de los listados para adoptar? S(sí), N(no)." << endl;
     getline(cin>>ws, input_usuario);
     a_minuscula(input_usuario);
-    if(input_usuario.find('s') != string::npos){
+    if(input_usuario.find('s') != string::npos)
         seleccionar_animal();
-    }   
 }
 
+
 void Sistema::mostrar_animales_disponibles(int espacio_disponible){
-    for(int i = 0; i < lista.mostrar_cantidad(); i++){
+
+    int largo_lista = lista.mostrar_cantidad();
+    for(int i = 0; i < largo_lista; i++){
         if (espacio_disponible >= GIGANTE){
             mostrar_info_animal(i);
         }
@@ -273,12 +278,12 @@ void Sistema::mostrar_animales_disponibles(int espacio_disponible){
                 mostrar_info_animal(i);
             }
         }
-        else if(espacio_disponible < PEQUENIO && espacio_disponible > DIMINUTO){
+        else if(espacio_disponible <= PEQUENIO){
             if (lista.consulta(i)->obtener_tamanio() == "pequeño" || lista.consulta(i)->obtener_tamanio() == "diminuto"){
                 mostrar_info_animal(i);
             }
         }
-        else if(espacio_disponible < DIMINUTO){
+        else if(espacio_disponible <= DIMINUTO){
             if(lista.consulta(i)->obtener_tamanio() == "diminuto"){
                 mostrar_info_animal(i); 
             }
@@ -286,13 +291,16 @@ void Sistema::mostrar_animales_disponibles(int espacio_disponible){
     }
 }
 
-void Sistema::seleccionar_animal(){
+bool Sistema::seleccionar_animal(){
     string nombre;
     cout << "Ingrese el nombre de un animal disponible: " << endl;
     getline(cin>>ws, nombre); 
     int pos_animal = esta_en_lista(nombre);
     if(pos_animal == -1)
+    {
         cout << "No se encontró ningún animal que se llame <" << nombre << ">." << endl;
+        return false;
+    }   
     else{
         cout << "=====================================" << endl;
         cout << "Felicidades! Ha adoptado a " << nombre << endl;
@@ -300,6 +308,7 @@ void Sistema::seleccionar_animal(){
         Animal* aux = lista.consulta(pos_animal);
         lista.borrar(pos_animal);
         delete aux;
+        return true;
     }   
 }
 
@@ -392,7 +401,8 @@ void Sistema::cerrar_archivo(){
                         << lista.consulta(i)->obtener_tamanio() << ',' 
                         << lista.consulta(i)->devolver_especie() << ',' 
                         << lista.consulta(i)->mostrar_personalidad() << '\n';
-        }else{
+        }
+        else{
             lista_animales << lista.consulta(i)->obtener_nombre() << ',' 
                         << lista.consulta(i)->obtener_edad() << ',' 
                         << lista.consulta(i)->obtener_tamanio() << ',' 

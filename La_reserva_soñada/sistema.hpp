@@ -2,18 +2,18 @@
 #define SISTEMA_HPP
 #include "lista.h"
 #include "sistema.hpp"
-#include "animales.h"
-#include "perro.h"
-#include "gato.h"
-#include "caballo.h"
-#include "roedor.h"
-#include "conejo.h"
-#include "erizo.h"
-#include "lagartija.h"
-#include "dormilon.h"
-#include "jugueton.h"
-#include "sociable.h"
-#include "travieso.h"
+#include "./Animales/animales.h"
+#include "./Animales/perro.h"
+#include "./Animales/gato.h"
+#include "./Animales/caballo.h"
+#include "./Animales/roedor.h"
+#include "./Animales/conejo.h"
+#include "./Animales/erizo.h"
+#include "./Animales/lagartija.h"
+#include "./Animales/Personalidades/dormilon.h"
+#include "./Animales/Personalidades/jugueton.h"
+#include "./Animales/Personalidades/sociable.h"
+#include "./Animales/Personalidades/travieso.h"
 #include <iostream>
 #include <string>
 
@@ -51,7 +51,7 @@ enum opciones_menu{
 enum opciones_menu2{
     ELEGIR_INDIVIDUALMENTE = 1,
     ALIMENTAR_TODOS,
-    BAÑAR_TODOS,
+    BANIAR_TODOS,
     REGRESAR
 };
 
@@ -148,8 +148,8 @@ private:
     //pos:
     void mostrar_animales_disponibles(int espacio_disponible);
     //pre:
-    //pos:
-    void seleccionar_animal();
+    //pos: true en caso de que el animal sea seleccionado con exito, false en caso de que no se encuentre el animal
+    bool seleccionar_animal();
 };
 
 #endif

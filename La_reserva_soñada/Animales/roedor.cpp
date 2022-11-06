@@ -9,7 +9,7 @@ string Roedor::devolver_especie(){
 }
 
 void Roedor::lavarse(){
-    cout<<"El "<<especie_t<<" se rehuso a bañarse, los "<<especie_t<<"s no necesitan bañarse"<<endl;
+    cout<<"El "<<especie_t<<" se rehuso a bañarse, los "<<especie_t<<"es no necesitan bañarse"<<endl;
 }
 
 void Roedor::alimentarse(){
