@@ -1,6 +1,6 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
-
+#include <string>
 #include "./Personalidades/personalidad.h"
 
 const int crecimiento_hambre = 10;
@@ -72,7 +72,7 @@ class Animal
         virtual void lavarse(){}
 
         //Pre:
-        //Post: Destruye al objeto animal, liberando el espacio.
+        //Post: Destruye al objeto animal, liberando el espacio del puntero a personalidad.
         virtual ~Animal();
 };
 

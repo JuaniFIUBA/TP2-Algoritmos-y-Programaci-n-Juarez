@@ -17,6 +17,8 @@
 #include "./Animales/Personalidades/travieso.h"
 #include <iostream>
 #include <string>
+#include <iostream>
+#include <fstream>
 
 const char PERRO = 'P';
 const char GATO = 'G';
@@ -67,12 +69,15 @@ private:
     Lista<Animal*> lista;
 
 public:
+
+    //pre:
+    //pos: lee el archivo
     Sistema();
     //pre: 
     //pos: muestra por pantalla los datos de los animales registrados
     void imprimir_lista();
     //pre:
-    //pos:
+    //pos: actualiza el hambre y el higiene de cada animal de la lista
     void actualizar_atributos();
     //pre:
     //pos: agrega un animal al registro 
@@ -123,11 +128,6 @@ private:
     //pos: devuelve true en caso de que todos los datos ingresados sean válidos
     bool solicitar_datos_y_agregar();
  
-    //pre: 
-    //pos: devuelve true en caso de que el dato esté en el array de datos
-    template <typename T> 
-    bool verificar_dato(T dato, T* array_datos, int largo_array);
-   
     //pre: 
     //pos: devuelve la posicion en la lista en caso de que esté, -1 en caso de que no se haya encontrado
     int esta_en_lista(string nombre); 
