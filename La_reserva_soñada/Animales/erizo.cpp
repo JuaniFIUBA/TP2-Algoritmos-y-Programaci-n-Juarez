@@ -20,8 +20,17 @@ void Erizo::alimentarse(){
 }
 
 void Erizo::pasar_tiempo(){
-    this->hambre = hambre + crecimiento_hambre;
-    this->higiene = higiene - decrecimiento_higiene;
+    if(hambre + crecimiento_hambre > 100){
+        this->hambre = 100;
+    }else{
+        this->hambre = hambre + crecimiento_hambre;
+    }
+    
+    if(higiene - decrecimiento_higiene < 0){
+        this->higiene = 0;
+    }else{
+        this->higiene = higiene - decrecimiento_higiene;
+    }
 }
 
 Erizo::~Erizo(){

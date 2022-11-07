@@ -18,7 +18,11 @@ void Lagartija::alimentarse(){
 }
 
 void Lagartija::pasar_tiempo(){
-    this->hambre = hambre + crecimiento_hambre;
+    if(hambre + crecimiento_hambre > 100){
+        this->hambre = 100;
+    }else{
+        this->hambre = hambre + crecimiento_hambre;
+    }
 }
 
 Lagartija::~Lagartija(){
