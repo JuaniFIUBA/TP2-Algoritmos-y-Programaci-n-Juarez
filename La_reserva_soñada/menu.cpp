@@ -35,6 +35,9 @@ void Menu::seleccionar_opcion()
                 break;
             case 3:
                 sistema.buscar_animal();
+                cout << "Presione enter para continuar..." << endl;
+                cin.get();
+                cout << "\e[1;1H\e[2J" << endl; // limpia la consola
                 break;
             case 4:
                 mostrar_submenu();
@@ -64,7 +67,7 @@ void Menu::mostrar_submenu(){
         cout<<"\t Por favor eliga una de las siguientes opciones\n";
         cout<<"1. Elegir individualmente"<<endl;
         cout<<"2. Alimentar a todos"<<endl;
-        cout<<"3. Baniar a todos"<<endl;
+        cout<<"3. Bañar a todos"<<endl;
         cout<<"4. Regresar al inicio"<<endl;
         cout<<"\t\t=========================="<<endl;
         cout<<"Ingrese una opción: ";

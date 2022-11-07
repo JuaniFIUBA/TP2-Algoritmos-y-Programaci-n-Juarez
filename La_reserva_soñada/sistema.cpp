@@ -328,7 +328,7 @@ void Sistema::cerrar_archivo(){
     
 }
 
-Sistema::~Sistema(){
+Sistema::~Sistema(){    
     int largo_lista = lista.mostrar_cantidad();
     for(int i = 0; i < largo_lista; i++)
         delete lista.consulta(i);
