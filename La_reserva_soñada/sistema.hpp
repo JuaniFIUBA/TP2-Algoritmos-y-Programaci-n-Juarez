@@ -17,6 +17,8 @@
 #include "./Animales/Personalidades/travieso.h"
 #include <iostream>
 #include <string>
+#include <iostream>
+#include <fstream>
 
 const char PERRO = 'P';
 const char GATO = 'G';
@@ -72,7 +74,7 @@ public:
     //pos: muestra por pantalla los datos de los animales registrados
     void imprimir_lista();
     //pre:
-    //pos:
+    //pos: actualiza el hambre y el higiene de cada animal de la lista
     void actualizar_atributos();
     //pre:
     //pos: agrega un animal al registro 
