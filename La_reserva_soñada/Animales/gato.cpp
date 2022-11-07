@@ -9,7 +9,7 @@ string Gato::devolver_especie(){
 }
 
 void Gato::lavarse(){
-    cout << Animal::obtener_nombre() << " se rehuso a bañarse, los "<< especie_t <<"es no necesitan bañarse"<<endl;
+    cout << Animal::obtener_nombre() << " se rehuso a bañarse, los "<< especie_t <<"s no necesitan bañarse"<<endl;
 }
 
 void Gato::alimentarse(){
