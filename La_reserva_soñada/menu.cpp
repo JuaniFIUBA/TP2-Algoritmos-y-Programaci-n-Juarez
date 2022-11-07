@@ -37,7 +37,7 @@ void Menu::seleccionar_opcion()
                 sistema.buscar_animal();
                 break;
             case 4:
-                mostrar_menu2();
+                mostrar_submenu();
                 break;
             case 5:
                 sistema.adoptar_animal();
@@ -55,7 +55,7 @@ void Menu::seleccionar_opcion()
     
 }
 
-void Menu::mostrar_menu2(){ 
+void Menu::mostrar_submenu(){ 
     int opcion_elegida = 0;
     while(opcion_elegida != REGRESAR)
     {        

@@ -13,20 +13,20 @@ class Nodo
 
     public:
     //Constructor
-    //PRE: -
-    //POS: Contruye un Nodo con "dato" como dato. Siguiente en nullptr
+    //pŕe: -
+    //pos: Contruye un Nodo con "dato" como dato. Siguiente en nullptr
     Nodo(T dato);
 
-    //PRE: -
-    //POS: Cambia el puntero siguiente del nodo a "n"
+    //pre: -
+    //pos: Cambia el puntero siguiente del nodo a "n"
     void nodo_siguiente(Nodo<T>* n);
 
-    //PRE: -
-    //POS: retorna el dato almacenado en el nodo
+    //pre: -
+    //pos: retorna el dato almacenado en el nodo
     T obtener_dato();
 
-    //PRE: -
-    //POS: retorna el puntero siguiente del nodo
+    //pre: -
+    //pos: retorna el puntero siguiente del nodo
     Nodo<T>* obtener_siguiente();
 };
 

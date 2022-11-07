@@ -20,15 +20,12 @@ void Sistema::leer_archivo(){
         getline(lista_animales, especie,',');
         getline(lista_animales, personalidad);
 
-        definir_personalidad(personalidad, i, nombre, stoi(edad), tamanio, especie[0]);
+        crear_animal(personalidad, i, nombre, stoi(edad), tamanio, especie[0]);
         i++;
     }
     lista_animales.close();
 }
 
-Lista<Animal *> Sistema::obtener_lista(){
-    return this -> lista;
-}
 
 void Sistema::mostrar_info_animal(int pos)
 {
@@ -52,7 +49,7 @@ void Sistema::imprimir_lista(){
     }
 }
 
-Animal* Sistema::obtener_especie(std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie, Personalidad* personalidad){
+Animal* Sistema::crear_animal_base(std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie, Personalidad* personalidad){
     if(n_especie == PERRO){
         Animal* n_animal = new Perro(n_nombre, n_edad, n_tamanio, n_especie, personalidad);
         return n_animal;
@@ -82,26 +79,26 @@ Animal* Sistema::obtener_especie(std::string n_nombre, int n_edad, std::string n
     }
 }
 
-void Sistema::definir_personalidad(std::string n_personalidad,int posicion, std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie){
+void Sistema::crear_animal(std::string n_personalidad,int posicion, std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie){
    
     if(n_personalidad == "dormilon"){
         Personalidad* personalidad = new Dormilon();
-        Animal* animal = obtener_especie(n_nombre, n_edad, n_tamanio, n_especie, personalidad);
+        Animal* animal = crear_animal_base(n_nombre, n_edad, n_tamanio, n_especie, personalidad);
         this->lista.agregar(animal,posicion);
     }
     else if(n_personalidad == "jugueton"){
         Personalidad* personalidad = new Jugueton();
-        Animal* animal = obtener_especie(n_nombre, n_edad, n_tamanio, n_especie, personalidad);
+        Animal* animal = crear_animal_base(n_nombre, n_edad, n_tamanio, n_especie, personalidad);
         this->lista.agregar(animal,posicion);
     }
     else if(n_personalidad == "sociable"){
         Personalidad* personalidad = new Sociable();
-        Animal* animal = obtener_especie(n_nombre, n_edad, n_tamanio, n_especie, personalidad);
+        Animal* animal = crear_animal_base(n_nombre, n_edad, n_tamanio, n_especie, personalidad);
         this->lista.agregar(animal,posicion);
     }
     else{
         Personalidad* personalidad = new Travieso();
-        Animal* animal = obtener_especie(n_nombre, n_edad, n_tamanio, n_especie, personalidad);
+        Animal* animal = crear_animal_base(n_nombre, n_edad, n_tamanio, n_especie, personalidad);
         this->lista.agregar(animal,posicion);
     }
     
@@ -149,70 +146,10 @@ bool Sistema::solicitar_datos_y_agregar()
         return false;
     cout << "Ingrese la edad(debe estar entre 0 y 100 años):" << endl;
     edad = pedir_opcion(EDAD_MIN, EDAD_MAX);
-    agregar_animal(personalidad, nombre, edad, tamanio, especie);
+    crear_animal(personalidad, lista.mostrar_cantidad(), nombre, edad, tamanio, especie);
     return true;
 }
 
-bool Sistema::solicitar_personalidad(string &personalidad)
-{
-    cout << "Ingrese una personalidad: (jugueton, travieso, sociable o dormilon)" << endl;
-    getline(cin, personalidad);
-    a_minuscula(personalidad);
-    if(!verificar_dato<string>(personalidad, (string*)PERSONALIDADES, CANTIDAD_PERSONALIDADES))
-    {
-        cout << "La personalidad ingresada es inválida" << endl;
-        return false;
-    }
-    return true;
-}
-
-
-
-bool Sistema::solicitar_tamanio(string &tamanio)
-{
-    cout << "Ingrese un tamanio: (diminuto, pequeño, mediano, grande o gigante)" << endl;
-    getline(cin, tamanio);
-    a_minuscula(tamanio);
-    if(!verificar_dato<string>(tamanio, (string*)TAMANIOS, CANTIDAD_TAMANIOS))
-    {
-        cout << "El tamanio <" << tamanio << "> ingresado es inválido." << endl;
-        return false;
-    }
-    return true;
-}
-
-bool Sistema::solicitar_especie(char &especie)
-{
-    cout << "Ingrese una de las letras que se mostrarán a continuación para indicar la especie: " << endl;
-    cout << "P: Perro, G: Gato, C: Caballo, R: Roedor, O: Conejo, E: Erizo, L: Lagartija " << endl;
-    cin >> especie;
-    especie = (char)toupper(especie);
-    if(!verificar_dato<char>(especie, (char*)ESPECIES, CANTIDAD_ESPECIES))
-    {
-        cout << "La especie ingresada es inválida" << endl;
-        return false;
-    }
-    return true;
-}
-
-template <typename T>
-bool Sistema::verificar_dato(T dato, T* array_datos, int largo_array)
-{
-    for(int i = 0; i < largo_array; i++)
-    {
-        if(dato == array_datos[i])
-            return true;
-    }
-    return false;
-}
-
-void Sistema::a_minuscula(string &cadena)
-{
-    int largo_cadena = (int)cadena.length();
-    for(int i = 0; i < largo_cadena; i++)
-        cadena[i] = (char)tolower(cadena[i]);
-    
-}
 
 //devuelve la posicion si lo encuentra y -1 en el caso de que no encuentre el nombre
 int Sistema::esta_en_lista(string nombre)
@@ -225,12 +162,6 @@ int Sistema::esta_en_lista(string nombre)
     }
     return -1;
 }
-
-void Sistema::agregar_animal(std::string personalidad, std::string nombre, int edad, std::string tamanio, char especie)
-{
-    definir_personalidad(personalidad, lista.mostrar_cantidad(), nombre, edad, tamanio ,especie);
-}
-
 
 void Sistema::buscar_animal()
 {
@@ -278,7 +209,7 @@ void Sistema::mostrar_animales_disponibles(int espacio_disponible){
                 mostrar_info_animal(i);
             }
         }
-        else if(espacio_disponible <= PEQUENIO){
+        else if(espacio_disponible < PEQUENIO && espacio_disponible > DIMINUTO){
             if (lista.consulta(i)->obtener_tamanio() == "pequeño" || lista.consulta(i)->obtener_tamanio() == "diminuto"){
                 mostrar_info_animal(i);
             }
@@ -353,21 +284,6 @@ int Sistema::pedir_opcion(int rango_min, int rango_max){
     }
     return stoi(opcion);
 
-}
-
-bool Sistema::es_opcion_valida(string opcion, int rango_min, int rango_max){
-    bool son_caracteres_numericos = true;
-    int i = 0;
-    int cantidad_numeros = (int)opcion.length();
-
-    while(son_caracteres_numericos && i < cantidad_numeros){
-        son_caracteres_numericos = isdigit(opcion[i]);
-        i++;
-    }
-    if(!son_caracteres_numericos || stoi(opcion) < rango_min || stoi(opcion) > rango_max){
-        return false;
-    }
-    return son_caracteres_numericos;
 }
 
 void Sistema::alimentar_todos(){

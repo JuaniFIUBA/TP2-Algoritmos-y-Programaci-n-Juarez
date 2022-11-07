@@ -22,7 +22,7 @@ int Animal::obtener_edad(){
     return edad;
 }
 
-char Animal::obtener_especie(){
+char Animal::crear_animal_base(){
     return especie;
 }
 

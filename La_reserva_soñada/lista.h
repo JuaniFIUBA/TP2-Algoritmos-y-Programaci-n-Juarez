@@ -12,7 +12,8 @@ class Lista
     public:
         //constructor
         Lista();
-
+        //pre:
+        //pos: devuelve la cantidad de elementos + 1 de la lista
         int mostrar_cantidad();
         //pre:
         //pos: agrega un nodo en la posicion <<pos>> con pos >= 0
@@ -29,8 +30,12 @@ class Lista
         //destructor
         ~Lista();
     private:
+        //pre: posicion < cantidad_elementos
+        //pos: devuelve un puntero al nodo en la posición dada
         Nodo<T>* buscar_nodo(int posicion);
 
+        //pre: 
+        //pos: devuelve true en caso de que la lista este vacia
         bool es_vacia();
 };
 

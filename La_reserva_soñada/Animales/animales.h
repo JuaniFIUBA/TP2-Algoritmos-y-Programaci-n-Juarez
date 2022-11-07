@@ -37,7 +37,7 @@ class Animal
 
         //Pre:-
         //Post: Devuelve el tamanio del animal.
-        char obtener_especie();
+        char crear_animal_base();
 
         //Pre:-
         //Post: Devuelve el tipo de personalidad del animal

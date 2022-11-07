@@ -2,6 +2,7 @@
 #define SISTEMA_HPP
 #include "lista.h"
 #include "sistema.hpp"
+#include "validaciones.h"
 #include "./Animales/animales.h"
 #include "./Animales/perro.h"
 #include "./Animales/gato.h"
@@ -67,9 +68,6 @@ private:
 
 public:
     Sistema();
-    //pre: -
-    //pos:  Devuelva la lista.
-    Lista<Animal*> obtener_lista();
     //pre: 
     //pos: muestra por pantalla los datos de los animales registrados
     void imprimir_lista();
@@ -86,7 +84,7 @@ public:
     //pos:
     void elegir_individualmente();
     //pre:
-    //pos:
+    //pos: 
     int pedir_opcion(int rango_min, int rango_max);
     //pre:
     //pos: Vuelve el hambre de todos los animales a 0
@@ -104,49 +102,40 @@ public:
 
 
 private:
+   
     //pre: el archivo está en formato csv correcto (ordenado) 
     //pos: crea una lista de <Animal*>
     void leer_archivo();
-    //pre:
-    //pos:
-    Animal* obtener_especie(std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie, Personalidad *personalidad);
-    //pre:
-    //pos:
-    void definir_personalidad(std::string n_personalidad,int posicion, std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie);
+    
+    //pre: personalidad fue creada
+    //pos: devuelve un puntero a animal con las características del animal de n_especie
+    Animal* crear_animal_base(std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie, Personalidad *personalidad);
+    
+    //pre: 
+    //pos: crea el animal y lo agrega a la lista en la ultima posicion
+    void crear_animal(std::string n_personalidad,int posicion, std::string n_nombre, int n_edad, std::string n_tamanio, char n_especie);
+    
     //pre: pos < cantidad_elementos (lista)
     //pos: muestra todas las características del animal en la posición <<pos>>
     void mostrar_info_animal(int pos);
-    //pre: 
-    //pos:
-    void agregar_animal(std::string personalidad, std::string nombre, int edad, std::string tamanio, char especie);
+    
     //pre: 
     //pos: devuelve true en caso de que todos los datos ingresados sean válidos
     bool solicitar_datos_y_agregar();
-    //pre: 
-    //pos: devuelve true en caso de que todos los datos ingresados sean válidos
-    bool solicitar_personalidad(string &personalidad);
-    //pre: 
-    //pos: devuelve true en caso de que todos los datos ingresados sean válidos
-    bool solicitar_tamanio(string &tamanio);
-    //pre: 
-    //pos: devuelve true en caso de que todos los datos ingresados sean válidos
-    bool solicitar_especie(char &especie);
+ 
     //pre: 
     //pos: devuelve true en caso de que el dato esté en el array de datos
     template <typename T> 
     bool verificar_dato(T dato, T* array_datos, int largo_array);
-    //pre: 
-    //pos: devuelve el string en minuscula (no devuelve Ñ en minúsculas)
-    void a_minuscula(string &cadena);
+   
     //pre: 
     //pos: devuelve la posicion en la lista en caso de que esté, -1 en caso de que no se haya encontrado
     int esta_en_lista(string nombre); 
+    
     //pre:
-    //pos:
-    bool es_opcion_valida(string opcion, int rango_min, int rango_max);
-    //pre:
-    //pos:
+    //pos: muestra por consola los animales que se puedan tener en un espacio contenido en espacio_disponible
     void mostrar_animales_disponibles(int espacio_disponible);
+   
     //pre:
     //pos: true en caso de que el animal sea seleccionado con exito, false en caso de que no se encuentre el animal
     bool seleccionar_animal();
